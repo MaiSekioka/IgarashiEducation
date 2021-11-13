@@ -7,15 +7,19 @@
     <title>Igarashi Education | 全ての人が輝く教育を。個別指導の子どもたちの教室</title>
     <link rel="shortcut icon" href="favicon.ico">
     <link rel="icon" href="favicon.ico">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Noto+Sans+JP:wght@400;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/ress.css" />
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
     <header class="header">
       <div class="header-inner">
-        <a class="site-logo site-logo__link">
-          <h1 class="site-title"></h1>
-        </a>
+        <h1 class="site-logo">
+          <a href="#" class="site-logo__link"></a>
+        </h1>
         <!-- /.site-logo -->
         <nav class="nav-menu nav-menu-bg">
           <div class="nav-menu-inner">
@@ -63,29 +67,30 @@
           </div>
           <!-- /.catch-copy -->
 
+          <div class="information">
+            <p class="information__title">Information</p>
+            <ul class="information__list">
+              <li class="information__item">
+                <time class="information__time">2020.06.24</time>
+                <p class="information__text">
+                  今年度の夏期講習の申し込み受付を開始致しました。インターネットから申し込み可能です。
+                </p>
+              </li>
+              <li class="information__item">
+                <time class="information__time">2020.06.01</time>
+                <p class="information__text">
+                  新型コロナウイルスの対応につきまして。緊急のお知らせです。
+                </p>
+              </li>
+            </ul>
+            <!-- /.information__list -->
+  
+          </div>
+          <!-- /.information -->
+
         </div>
         <!-- /.wrapper -->
 
-        <div class="information">
-          <p class="information__title">Information</p>
-          <ul class="information__list">
-            <li class="information__item">
-              <time class="information__time">2020.06.24</time>
-              <p class="information__text">
-                今年度の夏期講習の申し込み受付を開始致しました。インターネットから申し込み可能です。
-              </p>
-            </li>
-            <li class="information__item">
-              <time class="information__time">2020.06.01</time>
-              <p class="information__text">
-                新型コロナウイルスの対応につきまして。緊急のお知らせです。
-              </p>
-            </li>
-          </ul>
-          <!-- /.information__list -->
-
-        </div>
-        <!-- /.information -->
 
       </section>
       <!-- /.main-visual -->
@@ -99,7 +104,7 @@
 
         <div class="concept-media">
           <div class="concept-media__image-wrapper">
-            <img src="" alt="" class="concept-media__img">
+            <img src="./img/concept01.png" alt="" class="concept-media__img">
           </div>
           <div class="concept-media__body">
             <h3 class="concept-media__title">
@@ -113,9 +118,9 @@
         </div>
         <!-- /.concept-media -->
 
-        <div class="concept-media">
+        <div class="concept-media concept-media--reverse">
           <div class="concept-media__image-wrapper">
-            <img src="" alt="" class="concept-media__img">
+            <img src="./img/concept02.png" alt="" class="concept-media__img">
           </div>
           <div class="concept-media__body">
             <h3 class="concept-media__title">
@@ -144,7 +149,10 @@
             <button class="overview-box__btn">詳しく見る</button>
           </div>
           <!-- /.company-box .overview-box -->
+        </section>
+        <!-- /.company -->
 
+        <section class="vision">
           <div class="vision-box overview-box">
             <div class="overview-title">
               <span class="overview-title__en">Vision</span>
@@ -155,15 +163,8 @@
             <button class="overview-box__btn">詳しく見る</button>
           </div>
           <!-- /.vision-box .overview-box -->
-
-        </section>
-        <!-- /.company -->
-
-        <section class="vision">
-
         </section>
         <!-- /.vision -->
-
       </div>
       <!-- /.overview -->
 
@@ -173,12 +174,101 @@
           <h2 class="section-title__jp">ブログ</h2>
         </div>
         <!-- /.section-title -->
+
+        <div class="article-wrapper">
+
+          <div class="blog-card">
+            <div class="blog-card__image-wrapper">
+              <img src="./img/blog01.png" alt="" class="blog-card__img">
+            </div>
+            <time class="blogcard__time">2020.6.24</time>
+            <span class="blog-card__category">お知らせ</span>
+            <span class="blog-card__category">夏期講習</span>
+            <a class="blog-card__link">
+              今年度の夏期講習の申し込み受付を開始致しました。インターネットから申し込み可能です。
+            </a>
+          </div>
+          <!-- /.blog-card -->
+
+          <div class="blog-card">
+            <div class="blog-card__image-wrapper">
+              <img src="./img/blog02.png" alt="" class="blog-card__img">
+            </div>
+            <time class="blogcard__time">2020.6.1</time>
+            <span class="blog-card__category">お知らせ</span>
+            <a class="blog-card__link">
+              新型コロナウイルスの対応につきまして。緊急のお知らせです。
+            </a>
+          </div>
+          <!-- /.blog-card -->
+
+          <div class="blog-card">
+            <div class="blog-card__image-wrapper">
+              <img src="./img/blog03.png" alt="" class="blog-card__img">
+            </div>
+            <time class="blogcard__time">2020.5.20</time>
+            <span class="blog-card__category">お知らせ</span>
+            <a class="blog-card__link">
+              6月1日放送予定の△△TV(○○テレビ系列)で当社の取り組みが紹介されます。
+            </a>
+          </div>
+          <!-- /.blog-card -->
+
+          <div class="blog-card">
+            <div class="blog-card__image-wrapper">
+              <img src="./img/blog04.png" alt="" class="blog-card__img">
+            </div>
+            <time class="blogcard__time">2020.5.12</time>
+            <span class="blog-card__category">学習方法</span>
+            <a class="blog-card__link">私たちはなぜ勉強するのでしょう？</a>
+          </div>
+          <!-- /.blog-card -->
+
+        </div>
+        <!-- /.article-wrapper -->
+        <button class="blog-btn">記事一覧へ</button>
       </section>
       <!-- /.blog -->
     </main>
 
     <footer class="footer">
+      <div class="footer-inner">
+        <a class="site-logo site-logo__link">
+          <h1 class="site-title"></h1>
+        </a>
+        <!-- /.site-logo -->
+        <nav class="nav-menu nav-menu-bg nav-menu--footer">
+          <div class="nav-menu-inner">
+            <ul class="nav-menu-list">
+              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">トップ</a></li>
+              <!-- /.nav-menu-list__item -->
+              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ニュース</a></li>
+              <!-- /.nav-menu-list__item -->
+              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">会社概要</a></li>
+              <!-- /.nav-menu-list__item -->
+              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">理念</a></li>
+              <!-- /.nav-menu-list__item -->
+              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ブログ</a></li>
+              <!-- /.nav-menu-list__item -->
+              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">採用情報</a></li>
+              <!-- /.nav-menu-list__item -->
+            </ul>
+            <!-- /.nav-menu-list -->
+          </div>
+          <!-- /.nav-menu-inner -->
 
+          <button class="contact-btn">お問い合わせ</button>
+
+        </nav>
+        <!-- /.nav-menu nav-menu-bg -->
+
+      </div>
+      <!-- /.footer-inner -->
+
+      <div class="footer-copy">
+        <small class="footer-copy__text">&copy; Igarashi Education</small>
+      </div>
+      <!-- /.footer-copy -->
     </footer>
     <!-- /.footer -->
 
