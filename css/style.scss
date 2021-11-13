@@ -186,3 +186,154 @@ a:link , a:visited , a:hover , a:active {
   white-space: nowrap;
 }
 
+/*----------------*/
+/* main-visual    */
+/*----------------*/
+.main-visual {
+  width: 100%;
+  height: 768px;
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, transparent 60%) , url(../img/main-visual02.png);
+  background-repeat: no-repeat;
+  background-position: 250px;
+  background-size: cover;
+}
+
+.catch-copy {
+  position: absolute;
+  top: 302px;
+  
+  &__jp {
+    font-size: 2.4rem;
+    color: $subColor;
+    font-weight: bold;
+    line-height: 1.458;
+    letter-spacing: 0.2em;
+  }
+
+  &__en {
+    font-weight: 400;
+    font-family: Bad Script;
+    font-size: 1.4rem;
+    color: $grayColor;
+    line-height: 2;
+    letter-spacing: 0.02em;
+    margin-top: 27px;
+  }
+}
+
+.information {
+  position: absolute;
+  bottom: 34px;
+  width: 496px;
+
+  &__title {
+    font-family: Oswald;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: $mainColor;
+    line-height: 1.444;
+    letter-spacing: 0.1em;
+  }
+
+  &__item {
+    display: flex;
+    margin-top: 16px;
+    min-height: 42px;
+
+    + .information__item {
+      margin-top: 12px;
+    }
+  }
+
+  &__time {
+    font-family: Oswald;
+    font-size: 1.4rem;
+    color: $grayColor;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    margin-right: 30px;
+  }
+
+  &__text {
+    display: inline-block;
+    font-size: 1.2rem;
+    color: $textColor;
+    line-height: 2;
+    letter-spacing: 0.02em;
+    overflow-wrap: break-word;
+    margin-top: -2px;
+  }
+}
+
+/*----------------*/
+/* concept        */
+/*----------------*/
+
+.concept {
+  width: 100%;
+  padding: 160px 0 240px;
+  background-color: $bgColor;
+}
+
+.concept-media {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 480px;
+  margin-top: 82px;
+
+  + .concept-media{
+    margin-top: 80px;
+  }
+
+  &__image-wrapper {
+    width: 640px;
+    min-width: 50%;
+    height: 100%;
+  }
+
+  &__img {
+    width: 100%;
+    height: 480px;
+    object-fit: cover;
+  }
+
+  &__body {
+    width: 640px;
+    min-width: 46.8%;
+    min-height: 360px;
+    background-color: #FEFEFE;
+    border-radius: 16px;
+    padding: 57px 40px 56px;
+    margin-left: -87px;
+    box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
+  }
+
+  &__title {
+    font-size: unquote('min(3.2rem,3.1vw)');
+    font-weight: bold;
+    color: $subColor;
+    line-height: 1.5;
+    letter-spacing: 0.2em;
+  }
+
+  &__text {
+    font-size: unquote('min(1.6rem,1.9vw)');
+    margin-top: 33px;
+    color: $textColor;
+    line-height: 2;
+    letter-spacing: 0.04em;
+  }
+}
+
+.concept-media--reverse {
+  flex-direction: row-reverse;
+
+  .concept-media{
+
+    &__body {
+    margin-left: 0;
+    margin-right: -87px;
+    }
+  }
+}
