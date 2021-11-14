@@ -310,7 +310,7 @@ a:link , a:visited , a:hover , a:active {
   }
 
   &__title {
-    font-size: unquote('min(3.2rem,3.1vw)');
+    font-size: unquote('min(3.2rem,3vw)');
     font-weight: bold;
     color: $subColor;
     line-height: 1.5;
@@ -318,7 +318,7 @@ a:link , a:visited , a:hover , a:active {
   }
 
   &__text {
-    font-size: unquote('min(1.6rem,1.9vw)');
+    font-size: unquote('min(1.6rem,1.8vw)');
     margin-top: 33px;
     color: $textColor;
     line-height: 2;
@@ -336,4 +336,120 @@ a:link , a:visited , a:hover , a:active {
     margin-right: -87px;
     }
   }
+}
+
+/*-----------------------*/
+/* overview              */
+/* (company,vision)      */
+/*-----------------------*/
+.overview {
+  width: 100%;
+  min-height: 391px;
+  display: flex;
+}
+
+.company,
+.vision {
+  width: 50%;
+  text-align: center;
+  padding: 16px;
+}
+
+.company {
+  background: url(../img/company-bg.png) no-repeat;
+  background-size: cover;
+}
+
+.vision {
+  background: url(../img/vision-bg.png) no-repeat;
+  background-size: cover;
+}
+
+.overview-box {
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #fff, $alpha: .75);
+  padding: 56px 0;
+
+  &__text {
+    display: inline-block;
+    font-size: unquote('min(1.6rem,1.65vw)');
+    font-weight: bold;
+    color: $textColor;
+    letter-spacing: 0.2em;
+    margin-top: 33px;
+    padding: 0 16px;
+  }
+}
+
+.overview-title {
+  &__en {
+    font-family: Oswald;
+    font-weight: 500;
+    font-size: unquote('min(1.8rem,1.856vw)');
+    color: $mainColor;
+    line-height: 1.444;
+    letter-spacing: 0.1em;
+  }
+
+  &__jp {
+    font-size: unquote('min(4rem,4.1vw)');
+    font-weight: bold;
+    color: $subColor;
+    line-height: 2.1875;
+    letter-spacing: 0.1em;
+    margin-top: 16px;
+  }
+}
+
+.overview-box__btn {
+  position: relative;
+  display: block;
+  width: 149px;
+  max-width: 100%;
+  border: 1px solid #B3C100;
+  border-radius: 30px;
+  background-color: #fff;
+  font-size: 1.2rem;
+  color: #34675C;
+  padding: 7px 60px 8px 20px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin: 56px auto 0;
+
+  &::before {
+    position: absolute;
+    top: 16px;
+    right: 15px;
+    content: '';
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    border-left: 16px solid #34675C;
+    border-top: 6px solid transparent;
+    transition: right .3s ease;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    top: 21px;
+    width: 37px;
+    height: 1px;
+    background-color: #34675C;
+    margin-left: 8px;
+    transition: .3s ease;
+  }
+
+  &:hover {
+    &::before{
+      right: 9px;
+      transition: right .3s ease;
+    }
+    &::after {
+      margin-left: 14px;
+      transition: .3s ease;
+    }
+  }
+
 }
