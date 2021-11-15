@@ -120,7 +120,7 @@ a:link , a:visited , a:hover , a:active {
 }
 
 .site-logo {
-  background-image: url(../img/logo.png);
+  background-image: url(../img/logo@2x.png);
   background-position: center;
   background-size: contain;
   width: 253px;
@@ -598,5 +598,62 @@ a:link , a:visited , a:hover , a:active {
       margin-left: 13px;
       transition: .3s ease;
     }
+  }
+}
+
+/*----------------*/
+/* footer         */
+/*----------------*/
+.footer {
+  width: 100%;
+  background-color: $bgColor;
+  padding: 0 32px;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1128px;
+  min-height: 47px;
+  border-top: 1px solid $grayColor;
+  margin: 0 auto;
+  padding: 16.5px 0 33px;
+}
+
+.footer {
+
+  .site-logo{
+    background-image: url(../img/footer-logo@2x.png);
+    width: 229px;
+    min-width: 160px;
+    height: 47px;
+  }
+
+  .nav-menu {
+    height: 40px;
+  
+    &-list {
+      &__item {
+        min-width: 40px;
+      }
+  
+      &__link {
+        padding: 8px 0;
+      }
+    }
+  }
+}
+
+.footer-copy {
+  width: 100%;
+  text-align: center;
+
+  &__text {
+    font-family: Oswald;
+    font-size: 1.2rem;
+    color: $subColor;
+    line-height: 1.416;
+    letter-spacing: 0.04em;
+    padding-bottom: 24px;
   }
 }
