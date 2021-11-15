@@ -72,6 +72,7 @@ a:link, a:visited, a:hover, a:active {
   top: 16px;
   right: 0;
   left: 0;
+  z-index: 1;
   width: 95%;
   max-width: 1300px;
   height: 80px;
@@ -160,9 +161,30 @@ a:link, a:visited, a:hover, a:active {
   letter-spacing: 0.02em;
 }
 .nav-menu-list__link {
+  position: relative;
   display: block;
   padding: 28px 0;
   white-space: nowrap;
+  min-width: calc(100% + 32px);
+  height: 100%;
+  text-align: center;
+}
+.nav-menu-list__link::after {
+  position: absolute;
+  content: "";
+  bottom: 0.5px;
+  right: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #34675c;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
+}
+.nav-menu-list__link:hover::after {
+  width: 100%;
+  -webkit-transition: width 0.5s ease;
+  transition: width 0.5s ease;
 }
 
 .contact-btn {
@@ -174,6 +196,13 @@ a:link, a:visited, a:hover, a:active {
   border-radius: 40px;
   padding: 8px 16px;
   white-space: nowrap;
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
+}
+.contact-btn:hover {
+  background: rgba(179, 193, 0, 0.7);
+  -webkit-transition: background-color 0.3s;
+  transition: background-color 0.3s;
 }
 
 /*----------------*/
@@ -620,6 +649,17 @@ a:link, a:visited, a:hover, a:active {
 }
 .footer .nav-menu-list__link {
   padding: 8px 0;
+  opacity: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+}
+.footer .nav-menu-list__link::after {
+  position: static;
+}
+.footer .nav-menu-list__link:hover {
+  opacity: 0.7;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
 }
 
 .footer-copy {

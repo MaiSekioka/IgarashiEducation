@@ -100,6 +100,7 @@ a:link , a:visited , a:hover , a:active {
   top: 16px;
   right: 0;
   left: 0;
+  z-index: 1;
   width: 95%;
   max-width: 1300px;
   height: 80px;
@@ -168,9 +169,30 @@ a:link , a:visited , a:hover , a:active {
     }
 
     &__link {
+      position: relative;
       display: block;
       padding: 28px 0;
       white-space: nowrap;
+      min-width: calc(100% + 32px);
+      height: 100%;
+      text-align: center;
+
+      &::after {
+        position: absolute;
+        content: '';
+        bottom: 0.5px;
+        right: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: $subColor;
+        transition: width .5s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+        transition: width .5s ease;
+      }
     }
   }
 }
@@ -184,6 +206,12 @@ a:link , a:visited , a:hover , a:active {
   border-radius: 40px;
   padding: 8px 16px;
   white-space: nowrap;
+  transition: background-color .3s;
+
+  &:hover {
+    background: rgba($color: $mainColor, $alpha: .7);
+    transition: background-color .3s;
+  }
 }
 
 /*----------------*/
@@ -639,6 +667,17 @@ a:link , a:visited , a:hover , a:active {
   
       &__link {
         padding: 8px 0;
+        opacity: 1;
+        transition: opacity .3s;
+
+        &::after {
+          position: static;
+        }
+  
+        &:hover {
+          opacity: .7;
+          transition: opacity .4s;
+        }
       }
     }
   }
