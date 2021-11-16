@@ -313,6 +313,8 @@ a:link, a:visited, a:hover, a:active {
   height: 480px;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: center left;
+     object-position: center left;
 }
 .concept-media__body {
   width: 640px;
@@ -347,6 +349,10 @@ a:link, a:visited, a:hover, a:active {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+.concept-media--reverse .concept-media__img {
+  -o-object-position: center right;
+     object-position: center right;
 }
 .concept-media--reverse .concept-media__body {
   margin-left: 32px;
