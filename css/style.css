@@ -429,6 +429,8 @@ a:link, a:visited, a:hover, a:active {
   text-align: center;
   letter-spacing: 0.02em;
   margin: 56px auto 0;
+  -webkit-box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
+          box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
 }
 .overview-box__btn::before {
   position: absolute;
@@ -578,40 +580,42 @@ a:link, a:visited, a:hover, a:active {
   line-height: 1.94444;
   letter-spacing: 0.02em;
   margin: 56px auto 0;
+  -webkit-box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
+          box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
 }
 .blog-btn::before {
   position: absolute;
   top: 29px;
-  right: 47px;
+  right: 48px;
   content: "";
   width: 0;
   height: 0;
   background-color: transparent;
   border-left: 16px solid #34675C;
   border-top: 6px solid transparent;
-  -webkit-transition: right 0.3s ease;
-  transition: right 0.3s ease;
+  -webkit-transition: right 0.3s;
+  transition: right 0.3s;
 }
 .blog-btn::after {
   position: absolute;
   content: "";
-  top: 34px;
+  bottom: 20px;
   width: 34px;
   height: 1px;
   background-color: #34675C;
   margin-left: 8px;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: margin-left 0.3s;
+  transition: margin-left 0.3s;
 }
 .blog-btn:hover::before {
-  right: 41px;
-  -webkit-transition: right 0.3s ease;
-  transition: right 0.3s ease;
+  right: 42px;
+  -webkit-transition: right 0.3s;
+  transition: right 0.3s;
 }
 .blog-btn:hover::after {
   margin-left: 13px;
-  -webkit-transition: 0.3s ease;
-  transition: 0.3s ease;
+  -webkit-transition: margin-left 0.3s;
+  transition: margin-left 0.3s;
 }
 
 /*----------------*/

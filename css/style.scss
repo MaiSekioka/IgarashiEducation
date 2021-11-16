@@ -446,6 +446,7 @@ a:link , a:visited , a:hover , a:active {
   text-align: center;
   letter-spacing: 0.02em;
   margin: 56px auto 0;
+  box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
 
   &::before {
     position: absolute;
@@ -594,39 +595,40 @@ a:link , a:visited , a:hover , a:active {
   line-height: 1.94444;
   letter-spacing: 0.02em;
   margin: 56px auto 0;
+  box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
 
   &::before {
     position: absolute;
     top: 29px;
-    right: 47px;
+    right: 48px;
     content: '';
     width: 0;
     height: 0;
     background-color: transparent;
     border-left: 16px solid #34675C;
     border-top: 6px solid transparent;
-    transition: right .3s ease;
+    transition: right .3s;
   }
 
   &::after {
     position: absolute;
     content: '';
-    top: 34px;
+    bottom: 20px;
     width: 34px;
     height: 1px;
     background-color: #34675C;
     margin-left: 8px;
-    transition: .3s ease;
+    transition: margin-left .3s;
   }
 
   &:hover {
     &::before{
-      right: 41px;
-      transition: right .3s ease;
+      right: 42px;
+      transition: right .3s;
     }
     &::after {
       margin-left: 13px;
-      transition: .3s ease;
+      transition: margin-left .3s ;
     }
   }
 }
