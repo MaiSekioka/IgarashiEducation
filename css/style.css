@@ -210,11 +210,11 @@ a:link, a:visited, a:hover, a:active {
 /*----------------*/
 .main-visual {
   width: 100%;
-  height: 768px;
-  background: -webkit-gradient(linear, left top, right top, from(white), color-stop(5%, white), color-stop(60%, transparent)), url(../img/main-visual.png);
-  background: linear-gradient(90deg, white 0%, white 5%, transparent 60%), url(../img/main-visual.png);
+  min-height: 768px;
+  background: -webkit-gradient(linear, left top, right top, from(white), color-stop(5%, white), color-stop(60%, transparent)), url(../img/main-visual-lg.png);
+  background: linear-gradient(90deg, white 0%, white 5%, transparent 60%), url(../img/main-visual-lg.png);
   background-repeat: no-repeat;
-  background-position: 250px;
+  background-position: center right;
   background-size: cover;
 }
 
@@ -664,6 +664,7 @@ a:link, a:visited, a:hover, a:active {
 
 .footer-copy {
   width: 100%;
+  height: 41px;
   text-align: center;
 }
 .footer-copy__text {
