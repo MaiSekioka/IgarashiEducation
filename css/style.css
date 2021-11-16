@@ -322,6 +322,7 @@ a:link, a:visited, a:hover, a:active {
   border-radius: 16px;
   padding: 57px 40px 56px;
   margin-left: -87px;
+  margin-right: 32px;
   -webkit-box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
           box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
 }
@@ -331,6 +332,7 @@ a:link, a:visited, a:hover, a:active {
   color: #34675c;
   line-height: 1.5;
   letter-spacing: 0.2em;
+  white-space: nowrap;
 }
 .concept-media__text {
   font-size: min(1.6rem,1.8vw);
@@ -347,7 +349,7 @@ a:link, a:visited, a:hover, a:active {
           flex-direction: row-reverse;
 }
 .concept-media--reverse .concept-media__body {
-  margin-left: 0;
+  margin-left: 32px;
   margin-right: -87px;
 }
 

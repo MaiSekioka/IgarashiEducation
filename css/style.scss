@@ -334,6 +334,7 @@ a:link , a:visited , a:hover , a:active {
     border-radius: 16px;
     padding: 57px 40px 56px;
     margin-left: -87px;
+    margin-right: 32px;
     box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
   }
 
@@ -343,6 +344,7 @@ a:link , a:visited , a:hover , a:active {
     color: $subColor;
     line-height: 1.5;
     letter-spacing: 0.2em;
+    white-space: nowrap;
   }
 
   &__text {
@@ -360,7 +362,7 @@ a:link , a:visited , a:hover , a:active {
   .concept-media{
 
     &__body {
-    margin-left: 0;
+    margin-left: 32px;
     margin-right: -87px;
     }
   }
