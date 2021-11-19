@@ -32,6 +32,7 @@ body {
   font-family: Noto Sans JP, “游ゴシック”, “Yu Gothic”, “YuGothic”,”Meiryo”, 
   “Hiragino Sans”, “ヒラギノ角ゴシック”, “Hiragino Kaku Gothic ProN”, “ヒラギノ角ゴ ProN”, 
   “MS Gothic”, “Osaka”, sans-serif;
+  position: relative;
 }
 
 body > * {
@@ -57,7 +58,6 @@ a:link , a:visited , a:hover , a:active {
 /*----------------*/
 
 .wrapper {
-  position: relative;
   width: 87.5%;
   max-width: 1138px;
   min-height: 768px;
@@ -90,6 +90,10 @@ a:link , a:visited , a:hover , a:active {
 
 .md-br {
   display: none;
+
+  @include mq() {
+    display: inline-block;
+  }
 }
 
 /*----------------*/
@@ -100,7 +104,6 @@ a:link , a:visited , a:hover , a:active {
   top: 16px;
   right: 0;
   left: 0;
-  z-index: 1;
   width: 95%;
   max-width: 1300px;
   height: 80px;
@@ -108,6 +111,11 @@ a:link , a:visited , a:hover , a:active {
   margin: 0 auto;
   border-radius: 40px;
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
+
+  @include mq(){
+    height: 56px;
+  }
+
 }
 
 .header-inner {
@@ -118,6 +126,11 @@ a:link , a:visited , a:hover , a:active {
   justify-content: space-between;
   margin: 0 auto;
   padding: 0 16px;
+
+  @include mq(){
+    position: relative;
+    z-index: 1;
+  }
 }
 
 .site-logo {
@@ -128,6 +141,12 @@ a:link , a:visited , a:hover , a:active {
   min-width: 180px;
   height: 80px;
   margin-right: 12px;
+
+  @include mq(){
+    width: 201px;
+    height: 32px;
+    margin-right: 0;
+  }
 
   &__link {
     display: block;
@@ -142,12 +161,20 @@ a:link , a:visited , a:hover , a:active {
   height: 100%;
   font-size: unquote('min(1.6rem,1.7vw)');
 
+  @include mq(){
+    visibility: hidden;
+  }
+
   &-inner {
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include mq(){
+      display: block;
+    }
   }
 
   &-list {
@@ -158,6 +185,14 @@ a:link , a:visited , a:hover , a:active {
     justify-content: space-between;
     align-items: center;
     margin-right: 8px;
+
+    @include mq(){
+      display: block;
+      margin-right: 0;
+      width: 303px;
+      height: auto;
+      padding: 192px 155px;
+    }
     
     &__item {
       display: flex;
@@ -197,6 +232,89 @@ a:link , a:visited , a:hover , a:active {
   }
 }
 
+.nav-menu-bg {
+  visibility: hidden;
+  display: block;
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  z-index: -3;
+  width: 0;
+  min-height: 100vh;
+  background-color: transparent;
+  transition: .5s;
+
+  &[aria-hidden="false"] {
+    width: 100vw;
+    transition: width .5s;
+  }
+
+  &__inner {
+    width: 80%;
+    min-height: 100vh;
+    background-color: $bgColor;
+    float: right;
+  }
+}
+
+.burger-btn {
+  display: none;
+
+  @include mq(){ 
+    position: absolute;
+    top: 50%;
+    right: 24px;
+    transform: translateY(-50%);
+    z-index: 2;
+    display: block; 
+    width: 32px;
+    height: 22px;
+    background-color: transparent;
+    margin-right: 12px;
+  }
+}
+
+.bar {
+  position: relative;
+  display: block;
+  width: 32px;
+  height: 2px;
+  background-color: $subColor;
+  border-radius: 2px;
+
+  &--top,
+  &--btm {
+    position: absolute;
+    display: block;
+  }
+
+  &--top {
+    top: 0;
+  }
+
+  &--btm {
+    bottom: 0;
+  }
+}
+
+.burger-btn[aria-expanded="true"] {
+  @include mq(){
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.burger-btn[aria-expanded="true"] .bar--top {
+  transform: rotate(45deg) translate(4px,11px);
+}
+.burger-btn[aria-expanded="true"] .bar--mid {
+  opacity: 0;
+}
+.burger-btn[aria-expanded="true"] .bar--btm {
+  transform: rotate(-45deg) translate(4px,-11px);
+}
+
+
 .contact-btn {
   display: inline-block;
   width: 130px;
@@ -218,6 +336,8 @@ a:link , a:visited , a:hover , a:active {
 /* main-visual    */
 /*----------------*/
 .main-visual {
+  position: relative;
+  z-index: -5;
   width: 100%;
   min-height: 768px;
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 5%, transparent 60%) , url(../img/main-visual-lg.png);
@@ -666,29 +786,82 @@ a:link , a:visited , a:hover , a:active {
     height: 47px;
   }
 
-  .nav-menu {
-    height: 40px;
+  .footer-nav-menu {
+    width: 654px;
+    min-width: 57%;
+    height: 60px;
+    font-size: unquote('min(1.6rem,1.7vw)');
   
-    &-list {
-      &__item {
-        min-width: 40px;
-      }
   
-      &__link {
-        padding: 8px 0;
-        opacity: 1;
-        transition: opacity .3s;
+    &-inner {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
 
-        &::after {
-          position: static;
-        }
-  
-        &:hover {
-          opacity: .7;
-          transition: opacity .4s;
-        }
+      @include mq(){
+        justify-content: flex-end;
       }
     }
+  
+    &-list {
+      width: 74%;
+      max-width: 484px;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-right: 8px;
+
+      @include mq(){
+        display: none;
+      }
+      
+      &__item {
+        display: flex;
+        justify-content: center;
+        min-width: 40px;
+        height: 100%;
+        padding: 0 unquote('min(16px,2vw)');
+        letter-spacing: 0.02em;
+      }
+    
+      &__link {
+        position: relative;
+        display: block;
+        padding: 18px 0;
+        white-space: nowrap;
+        min-width: calc(100% + 32px);
+        height: 100%;
+        text-align: center;
+        opacity: 1;
+        transition: opacity .3s;
+    
+          &:hover {
+            opacity: .7;
+            transition: opacity .4s;
+          }
+        }
+      }
+      }
+    }
+
+
+.footer-contact-btn {
+  display: inline-block;
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  background-color: $mainColor;
+  border-radius: 40px;
+  padding: 8px 16px;
+  white-space: nowrap;
+  transition: background-color .3s;
+
+  &:hover {
+    background: rgba($color: $mainColor, $alpha: .7);
+    transition: background-color .3s;
   }
 }
 

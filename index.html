@@ -21,36 +21,39 @@
           <a href="#" class="site-logo__link"></a>
         </h1>
         <!-- /.site-logo -->
-        <nav class="nav-menu nav-menu-bg">
-          <div class="nav-menu-inner">
-            <ul class="nav-menu-list">
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">トップ</a></li>
-              <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ニュース</a></li>
-              <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">会社概要</a></li>
-              <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">理念</a></li>
-              <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ブログ</a></li>
-              <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">採用情報</a></li>
-              <!-- /.nav-menu-list__item -->
-            </ul>
+        <button class="burger-btn" id="js-burgerBtn" aria-controls="js-globalMenu" aria-expanded="false" aria-label="メニューの開閉を行う">
+          <span class="bar bar--top"></span>
+          <span class="bar bar--mid"></span>
+          <span class="bar bar--btm"></span>
+        </button>
+      <nav class="nav-menu js-globalMenu"　id="js-globalMenu" aria-hidden="true">
+        <div class="nav-menu-inner">
+          <ul class="nav-menu-list">
+            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">トップ</a></li>
+            <!-- /.nav-menu-list__item -->
+            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ニュース</a></li>
+            <!-- /.nav-menu-list__item -->
+            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">会社概要</a></li>
+            <!-- /.nav-menu-list__item -->
+            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">理念</a></li>
+            <!-- /.nav-menu-list__item -->
+            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ブログ</a></li>
+            <!-- /.nav-menu-list__item -->
+            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">採用情報</a></li>
+            <!-- /.nav-menu-list__item -->
+          </ul>
             <!-- /.nav-menu-list -->
-
             <button class="contact-btn">お問い合わせ</button>
-          </div>
-          <!-- /.nav-menu-inner -->
-          <button class="burger-btn">
-            <span class="bar bar--top"></span>
-            <span class="bar bar--mid"></span>
-            <span class="bar bar--btm"></span>
-          </button>
-        </nav>
-        <!-- /.nav-menu nav-menu-bg -->
+        </div>
+        <!-- /.nav-menu-inner -->
+      </nav>
+      <!-- /.nav-menu -->
       </div>
       <!-- /.header-inner -->
+      <div class="nav-menu-bg js-globalMenu"id="js-globalMenu" aria-hidden="true">
+        <div class="nav-menu-bg__inner">
+        </div>
+      </div>
     </header>
     <!-- /.header -->
     <main>
@@ -253,28 +256,28 @@
           <a href="#/" class=" site-logo__link"></a>
         </h1>
         <!-- /.site-logo -->
-        <nav class="nav-menu nav-menu-bg nav-menu--footer">
-          <div class="nav-menu-inner">
-            <ul class="nav-menu-list">
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">トップ</a></li>
+        <nav class="footer-nav-menu">
+          <div class="footer-nav-menu-inner">
+            <ul class="footer-nav-menu-list">
+              <li class="footer-nav-menu-list__item"><a href="#/" class="footer-nav-menu-list__link">トップ</a></li>
               <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ニュース</a></li>
+              <li class="footer-nav-menu-list__item"><a href="#/" class="footer-nav-menu-list__link">ニュース</a></li>
               <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">会社概要</a></li>
+              <li class="footer-nav-menu-list__item"><a href="#/" class="footer-nav-menu-list__link">会社概要</a></li>
               <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">理念</a></li>
+              <li class="footer-nav-menu-list__item"><a href="#/" class="footer-nav-menu-list__link">理念</a></li>
               <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ブログ</a></li>
+              <li class="footer-nav-menu-list__item"><a href="#/" class="footer-nav-menu-list__link">ブログ</a></li>
               <!-- /.nav-menu-list__item -->
-              <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">採用情報</a></li>
+              <li class="footer-nav-menu-list__item"><a href="#/" class="footer-nav-menu-list__link">採用情報</a></li>
               <!-- /.nav-menu-list__item -->
             </ul>
             <!-- /.nav-menu-list -->
-          <button class="contact-btn">お問い合わせ</button>
+            <button class="footer-contact-btn">お問い合わせ</button>
           </div>
           <!-- /.nav-menu-inner -->
         </nav>
-        <!-- /.nav-menu nav-menu-bg -->
+        <!-- /.nav-menu -->
 
       </div>
       <!-- /.footer-inner -->
@@ -286,7 +289,10 @@
     </footer>
     <!-- /.footer -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js" defer></script>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous" defer></script>
     <script src="./js/main.js" defer></script>
   </body>
 </html>
