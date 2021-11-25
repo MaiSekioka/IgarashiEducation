@@ -7,7 +7,6 @@ body {
   color: #333333;
   font-size: 1.6rem;
   font-family: Noto Sans JP, “游ゴシック”, “Yu Gothic”, “YuGothic”, ”Meiryo”, “Hiragino Sans”, “ヒラギノ角ゴシック”, “Hiragino Kaku Gothic ProN”, “ヒラギノ角ゴ ProN”, “MS Gothic”, “Osaka”, sans-serif;
-  position: relative;
 }
 
 body > * {
@@ -87,11 +86,12 @@ a:link, a:visited, a:hover, a:active {
 /*----------------*/
 /* header         */
 /*----------------*/
-.header {
-  position: absolute;
+.header-menu-bar {
+  position: fixed;
   top: 16px;
   right: 0;
   left: 0;
+  z-index: 100;
   width: 95%;
   max-width: 1300px;
   height: 80px;
@@ -102,12 +102,13 @@ a:link, a:visited, a:hover, a:active {
           box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
 }
 @media screen and (max-width: 768px) {
-  .header {
+  .header-menu-bar {
     height: 56px;
   }
 }
 
-.header-inner {
+.header-menu-bar__inner {
+  position: relative;
   max-width: 1140px;
   height: 100%;
   display: -webkit-box;
@@ -123,7 +124,7 @@ a:link, a:visited, a:hover, a:active {
   padding: 0 16px;
 }
 @media screen and (max-width: 768px) {
-  .header-inner {
+  .header-menu-bar__inner {
     position: relative;
     z-index: 1;
   }
@@ -157,15 +158,6 @@ a:link, a:visited, a:hover, a:active {
   min-width: 57%;
   height: 100%;
   font-size: min(1.6rem,1.7vw);
-}
-@media screen and (max-width: 768px) {
-  .nav-menu {
-    visibility: hidden;
-  }
-}
-.nav-menu-inner {
-  width: 100%;
-  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -177,8 +169,27 @@ a:link, a:visited, a:hover, a:active {
           justify-content: space-between;
 }
 @media screen and (max-width: 768px) {
-  .nav-menu-inner {
-    display: block;
+  .nav-menu {
+    visibility: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: absolute;
+    top: 176px;
+    right: -82.4vw;
+    width: 80vw;
+    height: auto;
+    -webkit-transition: right 0.5s;
+    transition: right 0.5s;
+  }
+  .nav-menu[aria-hidden=false] {
+    right: -2.4vw;
+    -webkit-transition: right 0.5s;
+    transition: right 0.5s;
   }
 }
 .nav-menu-list {
@@ -198,11 +209,13 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 768px) {
   .nav-menu-list {
-    display: block;
-    margin-right: 0;
-    width: 303px;
-    height: auto;
-    padding: 192px 155px;
+    max-width: 303px;
+    min-width: 49.3%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
   }
 }
 .nav-menu-list__item {
@@ -217,6 +230,66 @@ a:link, a:visited, a:hover, a:active {
   padding: 0 min(16px,2vw);
   letter-spacing: 0.02em;
 }
+@media screen and (max-width: 768px) {
+  .nav-menu-list__item {
+    position: relative;
+    width: 100%;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+    height: 46px;
+    margin-top: 0;
+  }
+  .nav-menu-list__item + .nav-menu-list__item {
+    margin-top: 41px;
+  }
+}
+.nav-menu-list__item:hover {
+  opacity: 0.7;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+.nav-menu-list__item::after {
+  display: none;
+}
+@media screen and (max-width: 768px) {
+  .nav-menu-list__item::after {
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    content: "";
+    width: min(99px,20vw);
+    height: 36px;
+    text-align: left;
+    font-family: Oswald;
+    font-size: min(2.4rem,5.3vw);
+    color: #b7b8b6;
+    line-height: 1.5;
+    letter-spacing: 0.1em;
+  }
+}
+.nav-menu-list .nav-menu-list__item--top.nav-menu-list__item::after {
+  content: "Top";
+}
+.nav-menu-list .nav-menu-list__item--news.nav-menu-list__item::after {
+  content: "News";
+}
+.nav-menu-list .nav-menu-list__item--company.nav-menu-list__item::after {
+  content: "Company";
+}
+.nav-menu-list .nav-menu-list__item--view.nav-menu-list__item::after {
+  content: "View";
+}
+.nav-menu-list .nav-menu-list__item--blog.nav-menu-list__item::after {
+  content: "Blog";
+}
+.nav-menu-list .nav-menu-list__item--recruit.nav-menu-list__item::after {
+  content: "Recruit";
+}
 .nav-menu-list__link {
   position: relative;
   display: block;
@@ -225,6 +298,16 @@ a:link, a:visited, a:hover, a:active {
   min-width: calc(100% + 32px);
   height: 100%;
   text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .nav-menu-list__link {
+    padding: 0;
+    font-size: min(3.2rem,7vw);
+    color: #34675c;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+    text-align: left;
+  }
 }
 .nav-menu-list__link::after {
   position: absolute;
@@ -238,6 +321,11 @@ a:link, a:visited, a:hover, a:active {
   -webkit-transition: width 0.5s ease;
   transition: width 0.5s ease;
 }
+@media screen and (max-width: 768px) {
+  .nav-menu-list__link::after {
+    display: none;
+  }
+}
 .nav-menu-list__link:hover::after {
   width: 100%;
   -webkit-transition: width 0.5s ease;
@@ -247,13 +335,13 @@ a:link, a:visited, a:hover, a:active {
 .nav-menu-bg {
   visibility: hidden;
   display: block;
-  position: absolute;
-  top: -16px;
-  right: -16px;
-  z-index: -3;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
   width: 0;
-  min-height: 100vh;
-  background-color: transparent;
+  height: 100vh;
+  background-color: rgba(52, 103, 92, 0.5);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
@@ -263,10 +351,14 @@ a:link, a:visited, a:hover, a:active {
   transition: width 0.5s;
 }
 .nav-menu-bg__inner {
-  width: 80%;
-  min-height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-width: 80%;
+  height: 100%;
   background-color: #fafafa;
-  float: right;
+  -webkit-box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
+          box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
 }
 
 .burger-btn {
@@ -302,9 +394,17 @@ a:link, a:visited, a:hover, a:active {
 }
 .bar--top {
   top: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+.bar--mid {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 .bar--btm {
   bottom: 0;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 @media screen and (max-width: 768px) {
@@ -317,15 +417,29 @@ a:link, a:visited, a:hover, a:active {
 .burger-btn[aria-expanded=true] .bar--top {
   -webkit-transform: rotate(45deg) translate(4px, 11px);
           transform: rotate(45deg) translate(4px, 11px);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .burger-btn[aria-expanded=true] .bar--mid {
+  -webkit-transform: rotate(45deg) translate(-4px, 4px);
+          transform: rotate(45deg) translate(-4px, 4px);
   opacity: 0;
+  -webkit-transition: -webkit-transform opacity 0.5s;
+  transition: -webkit-transform opacity 0.5s;
+  transition: transform opacity 0.5s;
+  transition: transform opacity 0.5s, -webkit-transform opacity 0.5s;
 }
 
 .burger-btn[aria-expanded=true] .bar--btm {
   -webkit-transform: rotate(-45deg) translate(4px, -11px);
           transform: rotate(-45deg) translate(4px, -11px);
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 .contact-btn {
@@ -339,6 +453,15 @@ a:link, a:visited, a:hover, a:active {
   white-space: nowrap;
   -webkit-transition: background-color 0.3s;
   transition: background-color 0.3s;
+}
+@media screen and (max-width: 768px) {
+  .contact-btn {
+    width: min(259px,50vw);
+    height: min(79px,15.2vw);
+    font-size: min(3.2rem,6.5vw);
+    letter-spacing: 0.02em;
+    margin-top: 81px;
+  }
 }
 .contact-btn:hover {
   background: rgba(179, 193, 0, 0.7);
@@ -491,6 +614,8 @@ a:link, a:visited, a:hover, a:active {
 /* concept        */
 /*----------------*/
 .concept {
+  position: relative;
+  z-index: -5;
   width: 100%;
   padding: 160px 0 240px;
   background-color: #fafafa;
@@ -645,7 +770,6 @@ a:link, a:visited, a:hover, a:active {
 /*-----------------------*/
 .overview {
   width: 100%;
-  min-height: 391px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1095,6 +1219,7 @@ a:link, a:visited, a:hover, a:active {
   width: 130px;
   height: 40px;
   color: #fff;
+  font-size: 1.6rem;
   background-color: #b3c100;
   border-radius: 40px;
   padding: 8px 16px;
@@ -1106,6 +1231,7 @@ a:link, a:visited, a:hover, a:active {
   .footer-contact-btn {
     width: min(130px,30vw);
     height: min(40px,4.65vh);
+    font-size: min(1.6rem,3.7vw);
   }
 }
 .footer-contact-btn:hover {

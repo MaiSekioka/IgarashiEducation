@@ -32,7 +32,6 @@ body {
   font-family: Noto Sans JP, “游ゴシック”, “Yu Gothic”, “YuGothic”,”Meiryo”, 
   “Hiragino Sans”, “ヒラギノ角ゴシック”, “Hiragino Kaku Gothic ProN”, “ヒラギノ角ゴ ProN”, 
   “MS Gothic”, “Osaka”, sans-serif;
-  position: relative;
 }
 
 body > * {
@@ -112,11 +111,12 @@ a:link , a:visited , a:hover , a:active {
 /*----------------*/
 /* header         */
 /*----------------*/
-.header {
-  position: absolute;
+.header-menu-bar {
+  position: fixed;
   top: 16px;
   right: 0;
   left: 0;
+  z-index: 100;
   width: 95%;
   max-width: 1300px;
   height: 80px;
@@ -128,10 +128,10 @@ a:link , a:visited , a:hover , a:active {
   @include mq(){
     height: 56px;
   }
-
 }
 
-.header-inner {
+.header-menu-bar__inner {
+  position: relative;
   max-width: 1140px;
   height: 100%;
   display: flex;
@@ -174,22 +174,27 @@ a:link , a:visited , a:hover , a:active {
   min-width: 57%;
   height: 100%;
   font-size: unquote('min(1.6rem,1.7vw)');
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @include mq(){
     visibility: hidden;
-  }
+    flex-direction: column;
+    justify-content: flex-start;
+    position: absolute;
+    top: 176px;
+    right: -82.4vw;
+    width: 80vw;
+    height: auto;
+    transition: right .5s;
 
-  &-inner {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    @include mq(){
-      display: block;
+    &[aria-hidden="false"] {
+      right: -2.4vw;
+      transition: right .5s;
     }
   }
+
 
   &-list {
     width: 74%;
@@ -201,11 +206,10 @@ a:link , a:visited , a:hover , a:active {
     margin-right: 8px;
 
     @include mq(){
-      display: block;
-      margin-right: 0;
-      width: 303px;
-      height: auto;
-      padding: 192px 155px;
+      max-width: 303px;
+      min-width: 49.3%;
+      flex-direction: column;
+      margin: 0 auto;
     }
     
     &__item {
@@ -215,7 +219,64 @@ a:link , a:visited , a:hover , a:active {
       height: 100%;
       padding: 0 unquote('min(16px,2vw)');
       letter-spacing: 0.02em;
+
+      @include mq(){
+        position: relative;
+        width: 100%;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 0;
+        height: 46px;
+        margin-top: 0;
+
+        + .nav-menu-list__item {
+          margin-top: 41px;
+        }
+      }
+
+      &:hover {
+        opacity: .7;
+        transition: opacity .5s;
+      }
+
+      &::after {
+        display: none;
+
+        @include mq(){
+          position: absolute;
+          right: 0;
+          display: inline-block;
+          content: '';
+          width: unquote('min(99px,20vw)');
+          height: 36px;
+          text-align: left;
+          font-family: Oswald;
+          font-size: unquote('min(2.4rem,5.3vw)');
+          color: $grayColor;
+          line-height: 1.5;
+          letter-spacing: 0.1em;
+        }
+      }
     }
+    .nav-menu-list__item--top.nav-menu-list__item::after {
+      content: 'Top';
+    }
+    .nav-menu-list__item--news.nav-menu-list__item::after {
+      content: 'News';
+    }
+    .nav-menu-list__item--company.nav-menu-list__item::after {
+      content: 'Company';
+    }
+    .nav-menu-list__item--view.nav-menu-list__item::after {
+      content: 'View';
+    }
+    .nav-menu-list__item--blog.nav-menu-list__item::after {
+      content: 'Blog';
+    }
+    .nav-menu-list__item--recruit.nav-menu-list__item::after {
+      content: 'Recruit';
+    }
+
 
     &__link {
       position: relative;
@@ -225,6 +286,15 @@ a:link , a:visited , a:hover , a:active {
       min-width: calc(100% + 32px);
       height: 100%;
       text-align: center;
+
+      @include mq(){
+        padding: 0;
+        font-size: unquote('min(3.2rem,7vw)');
+        color: $subColor;
+        font-weight: bold;
+        letter-spacing: 0.02em;
+        text-align: left;
+      }
 
       &::after {
         position: absolute;
@@ -236,6 +306,10 @@ a:link , a:visited , a:hover , a:active {
         height: 1px;
         background-color: $subColor;
         transition: width .5s ease;
+
+        @include mq(){
+          display: none;
+        }
       }
 
       &:hover::after {
@@ -249,13 +323,13 @@ a:link , a:visited , a:hover , a:active {
 .nav-menu-bg {
   visibility: hidden;
   display: block;
-  position: absolute;
-  top: -16px;
-  right: -16px;
-  z-index: -3;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 5;
   width: 0;
-  min-height: 100vh;
-  background-color: transparent;
+  height: 100vh;
+  background-color:rgba(52,103,92,.5);
   transition: .5s;
 
   &[aria-hidden="false"] {
@@ -264,10 +338,13 @@ a:link , a:visited , a:hover , a:active {
   }
 
   &__inner {
-    width: 80%;
-    min-height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 80%;
+    height: 100%;
     background-color: $bgColor;
-    float: right;
+    box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
   }
 }
 
@@ -304,10 +381,16 @@ a:link , a:visited , a:hover , a:active {
 
   &--top {
     top: 0;
+    transition: .5s;
+  }
+
+  &--mid {
+    transition: .5s;
   }
 
   &--btm {
     bottom: 0;
+    transition: .5s;
   }
 }
 
@@ -320,12 +403,16 @@ a:link , a:visited , a:hover , a:active {
 
 .burger-btn[aria-expanded="true"] .bar--top {
   transform: rotate(45deg) translate(4px,11px);
+  transition: transform .5s;
 }
 .burger-btn[aria-expanded="true"] .bar--mid {
+  transform: rotate(45deg) translate(-4px,4px);
   opacity: 0;
+  transition: transform opacity .5s;
 }
 .burger-btn[aria-expanded="true"] .bar--btm {
   transform: rotate(-45deg) translate(4px,-11px);
+  transition: transform .5s;
 }
 
 
@@ -339,6 +426,14 @@ a:link , a:visited , a:hover , a:active {
   padding: 8px 16px;
   white-space: nowrap;
   transition: background-color .3s;
+
+  @include mq(){
+    width: unquote('min(259px,50vw)');
+    height: unquote('min(79px,15.2vw)');
+    font-size: unquote('min(3.2rem,6.5vw)');
+    letter-spacing: 0.02em;
+    margin-top: 81px;
+  }
 
   &:hover {
     background: rgba($color: $mainColor, $alpha: .7);
@@ -489,6 +584,8 @@ a:link , a:visited , a:hover , a:active {
 /*----------------*/
 
 .concept {
+  position: relative;
+  z-index: -5;
   width: 100%;
   padding: 160px 0 240px;
   background-color: $bgColor;
@@ -624,7 +721,6 @@ a:link , a:visited , a:hover , a:active {
 /*-----------------------*/
 .overview {
   width: 100%;
-  min-height: 391px;
   display: flex;
 
   @include mq(){
@@ -1042,6 +1138,7 @@ a:link , a:visited , a:hover , a:active {
   width: 130px;
   height: 40px;
   color: #fff;
+  font-size: 1.6rem;
   background-color: $mainColor;
   border-radius: 40px;
   padding: 8px 16px;
@@ -1051,6 +1148,7 @@ a:link , a:visited , a:hover , a:active {
   @include mq(){
     width: unquote('min(130px,30vw)');
     height: unquote('min(40px,4.65vh)');
+    font-size: unquote('min(1.6rem,3.7vw)');
   }
 
   &:hover {

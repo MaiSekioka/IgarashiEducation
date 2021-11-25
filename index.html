@@ -16,46 +16,51 @@
   </head>
   <body>
     <header class="header">
-      <div class="header-inner">
-        <h1 class="site-logo">
-          <a href="#" class="site-logo__link"></a>
-        </h1>
-        <!-- /.site-logo -->
-        <button class="burger-btn" id="js-burgerBtn" aria-controls="js-globalMenu" aria-expanded="false" aria-label="メニューの開閉を行う">
-          <span class="bar bar--top"></span>
-          <span class="bar bar--mid"></span>
-          <span class="bar bar--btm"></span>
-        </button>
-      <nav class="nav-menu js-globalMenu"　id="js-globalMenu" aria-hidden="true">
-        <div class="nav-menu-inner">
-          <ul class="nav-menu-list">
-            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">トップ</a></li>
-            <!-- /.nav-menu-list__item -->
-            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ニュース</a></li>
-            <!-- /.nav-menu-list__item -->
-            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">会社概要</a></li>
-            <!-- /.nav-menu-list__item -->
-            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">理念</a></li>
-            <!-- /.nav-menu-list__item -->
-            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">ブログ</a></li>
-            <!-- /.nav-menu-list__item -->
-            <li class="nav-menu-list__item"><a href="#/" class="nav-menu-list__link">採用情報</a></li>
-            <!-- /.nav-menu-list__item -->
-          </ul>
+
+      <div class="nav-menu-bg js-globalMenu"id="js-globalMenu" aria-hidden="true">
+        <div class="nav-menu-bg__inner"></div>
+        <!-- /.nav-menu-bg__inner -->
+      </div>
+      <!-- /.nav-menu-bg -->
+
+      <div class="header-menu-bar">
+        <div class="header-menu-bar__inner">
+
+          <h1 class="site-logo">
+            <a href="#" class="site-logo__link"></a>
+          </h1>
+          <!-- /.site-logo -->
+
+          <nav class="nav-menu js-globalMenu"　id="js-globalMenu" aria-hidden="true">
+            <ul class="nav-menu-list">
+              <li class="nav-menu-list__item nav-menu-list__item--top"><a href="#/" class="nav-menu-list__link">トップ</a></li>
+              <li class="nav-menu-list__item nav-menu-list__item--news"><a href="#/" class="nav-menu-list__link">ニュース</a></li>
+              <li class="nav-menu-list__item nav-menu-list__item--company"><a href="#/" class="nav-menu-list__link">会社概要</a></li>
+              <li class="nav-menu-list__item nav-menu-list__item--view"><a href="#/" class="nav-menu-list__link">理念</a></li>
+              <li class="nav-menu-list__item nav-menu-list__item--blog"><a href="#/" class="nav-menu-list__link">ブログ</a></li>
+              <li class="nav-menu-list__item nav-menu-list__item--recruit"><a href="#/" class="nav-menu-list__link">採用情報</a></li>
+            </ul>
             <!-- /.nav-menu-list -->
             <button class="contact-btn">お問い合わせ</button>
+            <!-- /.contact-btn -->
+          </nav>
+          <!-- /.nav-menu -->
+
+          <button class="burger-btn" id="js-burgerBtn" aria-controls="js-globalMenu" aria-expanded="false" aria-label="メニューの開閉を行う">
+            <span class="bar bar--top"></span>
+            <span class="bar bar--mid"></span>
+            <span class="bar bar--btm"></span>
+          </button>
+          <!-- /.burger-btn -->
         </div>
-        <!-- /.nav-menu-inner -->
-      </nav>
-      <!-- /.nav-menu -->
+        <!-- /.header-menu-bar__inner -->
       </div>
-      <!-- /.header-inner -->
-      <div class="nav-menu-bg js-globalMenu"id="js-globalMenu" aria-hidden="true">
-        <div class="nav-menu-bg__inner">
-        </div>
-      </div>
+      <!-- /.header-menu-bar -->
+
     </header>
     <!-- /.header -->
+
+
     <main>
       <section class="main-visual">
         <div class="main-visual-inner">
