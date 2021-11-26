@@ -192,6 +192,11 @@ a:link, a:visited, a:hover, a:active {
     transition: right 0.5s;
   }
 }
+@media screen and (max-width: 768px) and (max-width: 375px) {
+  .nav-menu {
+    top: 125px;
+  }
+}
 .nav-menu-list {
   width: 74%;
   max-width: 484px;
@@ -216,6 +221,12 @@ a:link, a:visited, a:hover, a:active {
         -ms-flex-direction: column;
             flex-direction: column;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .nav-menu-list {
+    max-width: 57%;
+    width: 171px;
   }
 }
 .nav-menu-list__item {
@@ -244,8 +255,20 @@ a:link, a:visited, a:hover, a:active {
     height: 46px;
     margin-top: 0;
   }
+}
+@media screen and (max-width: 768px) and (max-width: 375px) {
+  .nav-menu-list__item {
+    height: 26px;
+  }
+}
+@media screen and (max-width: 768px) {
   .nav-menu-list__item + .nav-menu-list__item {
     margin-top: 41px;
+  }
+}
+@media screen and (max-width: 768px) and (max-width: 375px) {
+  .nav-menu-list__item + .nav-menu-list__item {
+    margin-top: 25px;
   }
 }
 .nav-menu-list__item:hover {
@@ -263,13 +286,20 @@ a:link, a:visited, a:hover, a:active {
     display: inline-block;
     content: "";
     width: min(99px,20vw);
-    height: 36px;
+    height: auto;
     text-align: left;
     font-family: Oswald;
     font-size: min(2.4rem,5.3vw);
     color: #b7b8b6;
     line-height: 1.5;
     letter-spacing: 0.1em;
+  }
+}
+@media screen and (max-width: 375px) {
+  .nav-menu-list__item::after {
+    width: min(58px,11.7vw);
+    height: auto;
+    font-size: min(1.4rem,3.1vw);
   }
 }
 .nav-menu-list .nav-menu-list__item--top.nav-menu-list__item::after {
@@ -307,6 +337,12 @@ a:link, a:visited, a:hover, a:active {
     font-weight: bold;
     letter-spacing: 0.02em;
     text-align: left;
+  }
+}
+@media screen and (max-width: 375px) {
+  .nav-menu-list__link {
+    font-size: min(1.8rem,5vw);
+    font-weight: 400;
   }
 }
 .nav-menu-list__link::after {
@@ -461,6 +497,14 @@ a:link, a:visited, a:hover, a:active {
     font-size: min(3.2rem,6.5vw);
     letter-spacing: 0.02em;
     margin-top: 81px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .contact-btn {
+    width: 130px;
+    height: 40px;
+    font-size: 1.6rem;
+    margin-top: 65px;
   }
 }
 .contact-btn:hover {

@@ -8,10 +8,12 @@ $grayColor: #b7b8b6;
 $tagColor: #4cb5f5;
 
 //breakpoints
+$breakpoint-sm: 375px !default;
 $breakpoint-md: 768px !default;
 $breakpoint-lg: 1300px !default;
 
 $breakpoints: (
+  'sm': 'screen and (max-width: 375px)',
   'md': 'screen and (max-width: 768px)',
   'lg': 'screen and (max-width: 1300px)'
 ) !default;
@@ -193,8 +195,11 @@ a:link , a:visited , a:hover , a:active {
       right: -2.4vw;
       transition: right .5s;
     }
-  }
 
+    @include mq(sm){
+      top: 125px;
+    }
+  }
 
   &-list {
     width: 74%;
@@ -210,6 +215,11 @@ a:link , a:visited , a:hover , a:active {
       min-width: 49.3%;
       flex-direction: column;
       margin: 0 auto;
+    }
+
+    @include mq(sm){
+      max-width: 57%;
+      width: 171px;
     }
     
     &__item {
@@ -229,8 +239,16 @@ a:link , a:visited , a:hover , a:active {
         height: 46px;
         margin-top: 0;
 
+        @include mq(sm){
+          height: 26px;
+        }
+
         + .nav-menu-list__item {
           margin-top: 41px;
+
+          @include mq(sm){
+            margin-top: 25px;
+          }
         }
       }
 
@@ -248,13 +266,19 @@ a:link , a:visited , a:hover , a:active {
           display: inline-block;
           content: '';
           width: unquote('min(99px,20vw)');
-          height: 36px;
+          height: auto;
           text-align: left;
           font-family: Oswald;
           font-size: unquote('min(2.4rem,5.3vw)');
           color: $grayColor;
           line-height: 1.5;
           letter-spacing: 0.1em;
+        }
+
+        @include mq(sm){
+          width: unquote('min(58px,11.7vw)');
+          height: auto;
+          font-size: unquote('min(1.4rem,3.1vw)');
         }
       }
     }
@@ -294,6 +318,11 @@ a:link , a:visited , a:hover , a:active {
         font-weight: bold;
         letter-spacing: 0.02em;
         text-align: left;
+      }
+
+      @include mq(sm){
+        font-size: unquote('min(1.8rem,5vw)');
+        font-weight: 400;
       }
 
       &::after {
@@ -433,6 +462,13 @@ a:link , a:visited , a:hover , a:active {
     font-size: unquote('min(3.2rem,6.5vw)');
     letter-spacing: 0.02em;
     margin-top: 81px;
+  }
+
+  @include mq(sm){
+    width: 130px;
+    height: 40px;
+    font-size: 1.6rem;
+    margin-top: 65px;
   }
 
   &:hover {
