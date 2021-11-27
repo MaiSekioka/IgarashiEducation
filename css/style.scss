@@ -357,12 +357,12 @@ a:link , a:visited , a:hover , a:active {
   right: 0;
   z-index: 5;
   width: 0;
-  height: 100vh;
+  height: 100%;
   background-color:rgba(52,103,92,.5);
   transition: .5s;
 
   &[aria-hidden="false"] {
-    width: 100vw;
+    width: 100%;
     transition: width .5s;
   }
 

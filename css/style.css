@@ -376,13 +376,13 @@ a:link, a:visited, a:hover, a:active {
   right: 0;
   z-index: 5;
   width: 0;
-  height: 100vh;
+  height: 100%;
   background-color: rgba(52, 103, 92, 0.5);
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 .nav-menu-bg[aria-hidden=false] {
-  width: 100vw;
+  width: 100%;
   -webkit-transition: width 0.5s;
   transition: width 0.5s;
 }
