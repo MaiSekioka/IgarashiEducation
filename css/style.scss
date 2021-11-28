@@ -902,6 +902,11 @@ a:link , a:visited , a:hover , a:active {
     width: 100%;
     height: 391px;
   }
+
+  @include mq(sm){
+    height: 228px;
+    padding: 8px;
+  }
 }
 
 .company {
@@ -920,6 +925,11 @@ a:link , a:visited , a:hover , a:active {
   background-color: rgba($color: #fff, $alpha: .75);
   padding: 56px 0;
 
+
+  @include mq(sm){
+    padding: 24px 0;
+  }
+  
   &__text {
     display: inline-block;
     font-size: unquote('min(1.6rem,1.65vw)');
@@ -929,9 +939,13 @@ a:link , a:visited , a:hover , a:active {
     margin-top: 33px;
     padding: 0 16px;
 
-
     @include mq(){
       font-size: unquote('min(1.6rem,3.5vw)');
+    }
+
+    @include mq(sm){
+      font-size: unquote('min(1.4rem,3.5vw)');
+      margin-top: 24px;
     }
   }
 }
@@ -948,6 +962,11 @@ a:link , a:visited , a:hover , a:active {
     @include mq(){
       font-size: unquote('min(1.8rem,3.9vw)');
     }
+
+    @include mq(sm){
+      font-size: unquote('min(1.2rem,3.4vw)');
+      line-height: 1;
+    }
   }
 
   &__jp {
@@ -960,6 +979,12 @@ a:link , a:visited , a:hover , a:active {
 
     @include mq(){
       font-size: unquote('min(4rem,8.7vw)');
+    }
+
+    @include mq(sm){
+      font-size: 2rem;
+      margin-top: 10px;
+      line-height: 1;
     }
   }
 }
@@ -979,6 +1004,10 @@ a:link , a:visited , a:hover , a:active {
   letter-spacing: 0.02em;
   margin: 56px auto 0;
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
+
+  @include mq(sm){
+    margin: 32px auto 0;
+  }
 
   &::before {
     position: absolute;

@@ -984,6 +984,13 @@ a:link, a:visited, a:hover, a:active {
     height: 391px;
   }
 }
+@media screen and (max-width: 375px) {
+  .company,
+.vision {
+    height: 228px;
+    padding: 8px;
+  }
+}
 
 .company {
   background: url(../img/company-bg.png) no-repeat;
@@ -1001,6 +1008,11 @@ a:link, a:visited, a:hover, a:active {
   background-color: rgba(255, 255, 255, 0.75);
   padding: 56px 0;
 }
+@media screen and (max-width: 375px) {
+  .overview-box {
+    padding: 24px 0;
+  }
+}
 .overview-box__text {
   display: inline-block;
   font-size: min(1.6rem,1.65vw);
@@ -1013,6 +1025,12 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .overview-box__text {
     font-size: min(1.6rem,3.5vw);
+  }
+}
+@media screen and (max-width: 375px) {
+  .overview-box__text {
+    font-size: min(1.4rem,3.5vw);
+    margin-top: 24px;
   }
 }
 
@@ -1029,6 +1047,12 @@ a:link, a:visited, a:hover, a:active {
     font-size: min(1.8rem,3.9vw);
   }
 }
+@media screen and (max-width: 375px) {
+  .overview-title__en {
+    font-size: min(1.2rem,3.4vw);
+    line-height: 1;
+  }
+}
 .overview-title__jp {
   font-size: min(4rem,4.1vw);
   font-weight: bold;
@@ -1040,6 +1064,13 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .overview-title__jp {
     font-size: min(4rem,8.7vw);
+  }
+}
+@media screen and (max-width: 375px) {
+  .overview-title__jp {
+    font-size: 2rem;
+    margin-top: 10px;
+    line-height: 1;
   }
 }
 
@@ -1059,6 +1090,11 @@ a:link, a:visited, a:hover, a:active {
   margin: 56px auto 0;
   -webkit-box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
           box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
+}
+@media screen and (max-width: 375px) {
+  .overview-box__btn {
+    margin: 32px auto 0;
+  }
 }
 .overview-box__btn::before {
   position: absolute;
