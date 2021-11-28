@@ -745,6 +745,10 @@ a:link , a:visited , a:hover , a:active {
     margin: 56px auto 0;
   }
 
+  @include mq(sm){
+    width: 80.53%;
+  }
+
   + .concept-media{
     margin-top: 80px;
 
@@ -774,6 +778,10 @@ a:link , a:visited , a:hover , a:active {
       height: 320px;
       object-position: 50% 50%;
     }
+
+    @include mq(sm){
+      height: 240px;
+    }
   }
 
   &__body {
@@ -794,6 +802,13 @@ a:link , a:visited , a:hover , a:active {
       height: 360px;
       padding: 56px 32px;
     }
+
+    @include mq(sm){
+      padding: 0;
+      height: auto;
+      background-color: transparent;
+      box-shadow: none;
+    }
   }
 
   &__title {
@@ -807,6 +822,12 @@ a:link , a:visited , a:hover , a:active {
     @include mq(){
       font-size: unquote('min(3.2rem,4.3vw)');
     }
+
+    @include mq(sm){
+      font-size: unquote('min(1.8rem,4.8vw)');
+      line-height: 2;
+      white-space: normal;
+    }
   }
 
   &__text {
@@ -818,6 +839,11 @@ a:link , a:visited , a:hover , a:active {
 
     @include mq(){
     font-size: unquote('min(1.6rem,3vw)');
+    }
+
+    @include mq(sm){
+      font-size: unquote('min(1.4rem,4vw)');
+      line-height: 2;
     }
   }
 }
