@@ -424,7 +424,6 @@ a:link , a:visited , a:hover , a:active {
     width: 32px;
     height: 22px;
     background-color: transparent;
-    margin-right: 12px;
   }
 }
 
@@ -880,7 +879,7 @@ a:link , a:visited , a:hover , a:active {
 
 /*-----------------------*/
 /* overview              */
-/* (company,vision)      */
+/* (company,view)        */
 /*-----------------------*/
 .overview {
   width: 100%;
@@ -893,7 +892,7 @@ a:link , a:visited , a:hover , a:active {
 }
 
 .company,
-.vision {
+.view {
   width: 50%;
   text-align: center;
   padding: 16px;
@@ -914,7 +913,7 @@ a:link , a:visited , a:hover , a:active {
   background-size: cover;
 }
 
-.vision {
+.view {
   background: url(../img/vision-bg.png) no-repeat;
   background-size: cover;
 }
