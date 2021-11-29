@@ -1059,6 +1059,7 @@ a:link , a:visited , a:hover , a:active {
     padding: 80px 0;
     margin: 0 auto;
   }
+
 }
 
 .article-wrapper {
@@ -1073,6 +1074,10 @@ a:link , a:visited , a:hover , a:active {
     width: 81.25%;
     margin: 56px auto -48px;
   }
+
+  @include mq(sm){
+    margin: 56px auto -32px;
+  }
 }
 
 .blog-card {
@@ -1086,6 +1091,12 @@ a:link , a:visited , a:hover , a:active {
     max-width: 48.7%;
     min-height: 345px;
     margin-bottom: 48px;
+  }
+
+  @include mq(sm){
+    min-width: 100%;
+    min-height: 333px;
+    margin-bottom: 32px;
   }
 
   &__link {
@@ -1160,6 +1171,10 @@ a:link , a:visited , a:hover , a:active {
     line-height: 2;
     letter-spacing: 0.1em;
     margin-top: 16px;
+
+    @include mq(sm){
+      font-size: 1.4rem;
+    }
   }
 }
 
@@ -1179,6 +1194,14 @@ a:link , a:visited , a:hover , a:active {
   letter-spacing: 0.02em;
   margin: 56px auto 0;
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
+
+  @include mq(){
+    margin-top: 48px;
+  }
+
+  @include mq(sm){
+    margin-top: 32px;
+  }
 
   &::before {
     position: absolute;

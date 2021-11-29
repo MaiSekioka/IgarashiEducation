@@ -1165,6 +1165,11 @@ a:link, a:visited, a:hover, a:active {
     margin: 56px auto -48px;
   }
 }
+@media screen and (max-width: 375px) {
+  .article-wrapper {
+    margin: 56px auto -32px;
+  }
+}
 
 .blog-card {
   width: 432px;
@@ -1178,6 +1183,13 @@ a:link, a:visited, a:hover, a:active {
     max-width: 48.7%;
     min-height: 345px;
     margin-bottom: 48px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .blog-card {
+    min-width: 100%;
+    min-height: 333px;
+    margin-bottom: 32px;
   }
 }
 .blog-card__link {
@@ -1254,6 +1266,11 @@ a:link, a:visited, a:hover, a:active {
   letter-spacing: 0.1em;
   margin-top: 16px;
 }
+@media screen and (max-width: 375px) {
+  .blog-card__text {
+    font-size: 1.4rem;
+  }
+}
 
 .blog-btn {
   position: relative;
@@ -1272,6 +1289,16 @@ a:link, a:visited, a:hover, a:active {
   margin: 56px auto 0;
   -webkit-box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
           box-shadow: 0 10px 15px rgba(51, 51, 51, 0.1);
+}
+@media screen and (max-width: 768px) {
+  .blog-btn {
+    margin-top: 48px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .blog-btn {
+    margin-top: 32px;
+  }
 }
 .blog-btn::before {
   position: absolute;
