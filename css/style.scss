@@ -155,6 +155,7 @@ a:link , a:visited , a:hover , a:active {
   height: 80px;
   background-color: #fff;
   margin: 0 auto;
+  padding: 0 16px;
   border-radius: 40px;
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
 
@@ -171,7 +172,6 @@ a:link , a:visited , a:hover , a:active {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  padding: 0 16px;
 
   @include mq(){
     position: relative;
@@ -203,7 +203,7 @@ a:link , a:visited , a:hover , a:active {
 }
 
 .nav-menu {
-  width: 654px;
+  width: 670px;
   min-width: 57%;
   height: 100%;
   font-size: unquote('min(1.6rem,1.7vw)');
@@ -233,8 +233,7 @@ a:link , a:visited , a:hover , a:active {
   }
 
   &-list {
-    width: 74%;
-    max-width: 484px;
+    width: 77%;
     height: 100%;
     display: flex;
     justify-content: space-between;
@@ -520,10 +519,10 @@ a:link , a:visited , a:hover , a:active {
   background-color: $bgColor;
   
   &-bg {
-    background: url(../img/main-visual.png);
+    background: url(../img/main-visual-md.png);
     background-repeat: no-repeat;
-    background-position: top right -250px;
-    background-size: cover;
+    background-position: top right -110px;
+    background-size: contain;
     
     @include mq(){
       background-image: url(../img/main-visual-md.png);
@@ -664,7 +663,7 @@ a:link , a:visited , a:hover , a:active {
     }
 
     + .information__item {
-      margin-top: 12px;
+      margin-top: 9px;
 
       @include mq(){
         margin-top: 8px;
@@ -831,9 +830,9 @@ a:link , a:visited , a:hover , a:active {
 
   &__text {
     font-size: unquote('min(1.6rem,1.8vw)');
-    margin-top: 33px;
+    margin-top: 31px;
     color: $textColor;
-    line-height: 1.9;
+    line-height: 1.95;
     letter-spacing: 0.04em;
 
     @include mq(){
@@ -935,7 +934,7 @@ a:link , a:visited , a:hover , a:active {
     font-weight: bold;
     color: $textColor;
     letter-spacing: 0.2em;
-    margin-top: 33px;
+    margin-top: 19px;
     padding: 0 16px;
 
     @include mq(){
@@ -974,7 +973,6 @@ a:link , a:visited , a:hover , a:active {
     color: $subColor;
     line-height: 2.1875;
     letter-spacing: 0.1em;
-    margin-top: 16px;
 
     @include mq(){
       font-size: unquote('min(4rem,8.7vw)');
@@ -1082,7 +1080,7 @@ a:link , a:visited , a:hover , a:active {
 .blog-card {
   width: 432px;
   max-width: 45.7%;
-  margin-bottom: 56px;
+  margin-bottom: 53px;
   min-height: 382px;
 
   @include mq(){
@@ -1111,7 +1109,7 @@ a:link , a:visited , a:hover , a:active {
   &__image-wrapper {
     position: relative;
     width: 100%;
-    padding-top: 60%;
+    padding-top: 53.4%;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
@@ -1137,7 +1135,7 @@ a:link , a:visited , a:hover , a:active {
   }
 
   &__body {
-    padding: 32px 16px;
+    padding: 28px 16px;
   }
 
   &__time {
@@ -1153,7 +1151,7 @@ a:link , a:visited , a:hover , a:active {
     color: $mainColor;
     line-height: 2;
     letter-spacing: 0.02em;
-    margin-left: 16px;
+    margin-left: 12px;
 
     &--seminar {
       color: $subColor;
@@ -1169,7 +1167,7 @@ a:link , a:visited , a:hover , a:active {
     font-weight: bold;
     line-height: 2;
     letter-spacing: 0.1em;
-    margin-top: 16px;
+    margin-top: 7px;
 
     @include mq(sm){
       font-size: 1.4rem;
@@ -1187,11 +1185,11 @@ a:link , a:visited , a:hover , a:active {
   background-color: #fff;
   font-size: 18px;
   color: #34675C;
-  padding: 10px 50px 11px 0;
+  padding: 10px 46px 11px 0;
   text-align: center;
   line-height: 1.94444;
   letter-spacing: 0.02em;
-  margin: 56px auto 0;
+  margin: 59px auto 0;
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
 
   @include mq(){
@@ -1204,7 +1202,7 @@ a:link , a:visited , a:hover , a:active {
 
   &::before {
     position: absolute;
-    top: 29px;
+    top: 28px;
     right: 48px;
     content: '';
     width: 0;
@@ -1218,7 +1216,7 @@ a:link , a:visited , a:hover , a:active {
   &::after {
     position: absolute;
     content: '';
-    bottom: 20px;
+    bottom: 22px;
     width: 34px;
     height: 1px;
     background-color: #34675C;
@@ -1255,11 +1253,11 @@ a:link , a:visited , a:hover , a:active {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1128px;
+  max-width: 1125px;
   min-height: 47px;
   border-top: 1px solid $grayColor;
   margin: 0 auto;
-  padding: 16.5px 0 33px;
+  padding: 10px 0 21px;
 
   @include mq(){
     max-width: none;
@@ -1292,7 +1290,7 @@ a:link , a:visited , a:hover , a:active {
   }
 
   .footer-nav-menu {
-    width: 654px;
+    width: 668px;
     min-width: 57%;
     height: 60px;
     font-size: unquote('min(1.6rem,1.7vw)');
@@ -1328,13 +1326,11 @@ a:link , a:visited , a:hover , a:active {
     }
   
     &-list {
-      width: 74%;
-      max-width: 484px;
+      width: 77%;
       height: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-right: 8px;
 
       @include mq(){
         display: none;
