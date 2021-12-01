@@ -217,14 +217,14 @@ a:link, a:visited, a:hover, a:active {
             justify-content: flex-start;
     position: absolute;
     top: 176px;
-    right: -82.4vw;
-    width: 80vw;
+    right: calc(-32px - 80%);
+    width: 80%;
     height: auto;
     -webkit-transition: right 0.5s;
     transition: right 0.5s;
   }
   .nav-menu[aria-hidden=false] {
-    right: -2.4vw;
+    right: 0;
     -webkit-transition: right 0.5s;
     transition: right 0.5s;
   }
@@ -250,7 +250,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 768px) {
   .nav-menu-list {
-    max-width: 303px;
+    max-width: 285px;
     min-width: 49.3%;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -261,7 +261,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .nav-menu-list {
-    max-width: 57%;
+    max-width: 62%;
     width: 171px;
   }
 }
@@ -324,7 +324,7 @@ a:link, a:visited, a:hover, a:active {
     right: 0;
     display: inline-block;
     content: "";
-    width: min(99px,20vw);
+    width: min(80px,20vw);
     height: auto;
     text-align: left;
     font-family: Oswald;

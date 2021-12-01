@@ -224,13 +224,13 @@ a:link , a:visited , a:hover , a:active {
     justify-content: flex-start;
     position: absolute;
     top: 176px;
-    right: -82.4vw;
-    width: 80vw;
+    right: calc(-32px - 80%);
+    width: 80%;
     height: auto;
     transition: right .5s;
 
     &[aria-hidden="false"] {
-      right: -2.4vw;
+      right: 0;
       transition: right .5s;
     }
 
@@ -248,14 +248,14 @@ a:link , a:visited , a:hover , a:active {
     margin-right: 8px;
 
     @include mq(){
-      max-width: 303px;
+      max-width: 285px;
       min-width: 49.3%;
       flex-direction: column;
       margin: 0 auto;
     }
 
     @include mq(sm){
-      max-width: 57%;
+      max-width: 62%;
       width: 171px;
     }
     
@@ -305,7 +305,7 @@ a:link , a:visited , a:hover , a:active {
           right: 0;
           display: inline-block;
           content: '';
-          width: unquote('min(99px,20vw)');
+          width: unquote('min(80px,20vw)');
           height: auto;
           text-align: left;
           font-family: Oswald;
