@@ -138,6 +138,11 @@ a:link, a:visited, a:hover, a:active {
     height: 56px;
   }
 }
+@media screen and (max-width: 375px) {
+  .header-menu-bar {
+    top: 8px;
+  }
+}
 
 .header-menu-bar__inner {
   position: relative;
@@ -437,7 +442,7 @@ a:link, a:visited, a:hover, a:active {
   .burger-btn {
     position: absolute;
     top: 50%;
-    right: 24px;
+    right: 9px;
     -webkit-transform: translateY(-50%);
             transform: translateY(-50%);
     z-index: 2;
@@ -565,7 +570,7 @@ a:link, a:visited, a:hover, a:active {
     background-image: url(../img/main-visual-md.png);
     background-color: #fafafa;
     background-repeat: no-repeat;
-    background-position: top right -120px;
+    background-position: top right -110px;
     background-size: auto 480px;
   }
 }
@@ -603,7 +608,7 @@ a:link, a:visited, a:hover, a:active {
   .catch-copy {
     position: static;
     padding-top: 148px;
-    padding-left: 10px;
+    padding-left: 8px;
     white-space: nowrap;
   }
 }
@@ -645,6 +650,7 @@ a:link, a:visited, a:hover, a:active {
   .catch-copy__en {
     font-size: clamp(0.83rem,1rem,1.3vw);
     line-height: 1.9;
+    margin-top: 26px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -652,6 +658,7 @@ a:link, a:visited, a:hover, a:active {
     white-space: normal;
     overflow-wrap: break-word;
     font-size: 1rem;
+    margin-top: 20px;
   }
 }
 
@@ -707,6 +714,7 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .information__item {
     min-height: auto;
+    margin-top: 15px;
   }
 }
 .information__item + .information__item {
@@ -714,7 +722,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 768px) {
   .information__item + .information__item {
-    margin-top: 8px;
+    margin-top: 7px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -813,20 +821,43 @@ a:link, a:visited, a:hover, a:active {
     margin-top: 40px;
   }
 }
-.concept-media__image-wrapper {
+.concept-media__image {
   width: 640px;
+  height: 480px;
   min-width: 50%;
-  height: 100%;
+  background-size: cover;
+  background-position: center left;
 }
 @media screen and (max-width: 768px) {
-  .concept-media__image-wrapper {
+  .concept-media__image {
     width: 100%;
+    height: 320px;
     margin-top: 40px;
   }
 }
+@media screen and (max-width: 375px) {
+  .concept-media__image {
+    height: 240px;
+  }
+}
+.concept-media__image--growth {
+  background-image: url(../img/concept01.png);
+}
+@media screen and (max-width: 768px) {
+  .concept-media__image--growth {
+    background-image: url(../img/concept01-md.png);
+  }
+}
+.concept-media__image--logo-and-color {
+  background-image: url(../img/concept02.png);
+  background-position: center right;
+}
+@media screen and (max-width: 768px) {
+  .concept-media__image--logo-and-color {
+    background-image: url(../img/concept02-md.png);
+  }
+}
 .concept-media__img {
-  width: 100%;
-  height: 480px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center left;
@@ -834,14 +865,8 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 768px) {
   .concept-media__img {
-    height: 320px;
     -o-object-position: 50% 50%;
        object-position: 50% 50%;
-  }
-}
-@media screen and (max-width: 375px) {
-  .concept-media__img {
-    height: 240px;
   }
 }
 .concept-media__body {
@@ -885,6 +910,7 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .concept-media__title {
     font-size: min(3.2rem,4.3vw);
+    line-height: 1.5;
   }
 }
 @media screen and (max-width: 375px) {
@@ -904,12 +930,13 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .concept-media__text {
     font-size: min(1.6rem,3vw);
+    line-height: 2;
+    margin-top: 28px;
   }
 }
 @media screen and (max-width: 375px) {
   .concept-media__text {
     font-size: min(1.4rem,4vw);
-    line-height: 2;
   }
 }
 
@@ -979,7 +1006,8 @@ a:link, a:visited, a:hover, a:active {
   .company,
 .view {
     width: 100%;
-    height: 391px;
+    height: 388px;
+    padding: 15px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -993,11 +1021,13 @@ a:link, a:visited, a:hover, a:active {
 .company {
   background: url(../img/company-bg.png) no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .view {
   background: url(../img/vision-bg.png) no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .overview-box {
@@ -1138,7 +1168,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 768px) {
   .blog {
-    padding: 80px 0;
+    padding: 82px 0 80px;
     margin: 0 auto;
   }
 }
@@ -1366,7 +1396,7 @@ a:link, a:visited, a:hover, a:active {
   .footer-inner {
     max-width: none;
     width: 81.25%;
-    padding: 24px 0 25px;
+    padding: 24px 0 19px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -1385,6 +1415,11 @@ a:link, a:visited, a:hover, a:active {
   background-size: contain;
   width: 229px;
   height: 47px;
+}
+@media screen and (max-width: 768px) {
+  .footer .footer-logo {
+    min-width: 229px;
+  }
 }
 @media screen and (max-width: 375px) {
   .footer .footer-logo {
