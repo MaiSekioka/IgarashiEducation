@@ -11,11 +11,13 @@ $tagColor: #4cb5f5;
 $breakpoint-sm: 375px !default;
 $breakpoint-md: 768px !default;
 $breakpoint-lg: 1300px !default;
+$breakpoint-xl: 1500px !default;
 
 $breakpoints: (
   'sm': 'screen and (max-width: 375px)',
   'md': 'screen and (max-width: 768px)',
-  'lg': 'screen and (max-width: 1300px)'
+  'lg': 'screen and (max-width: 1300px)',
+  'xl': 'screen and (min-width: 1500px)'
 ) !default;
 
 @mixin mq($breakpoint: md) {
@@ -112,6 +114,7 @@ a:link , a:visited , a:hover , a:active {
     @include mq(sm){
       font-size: 2.4rem;
       line-height: 1.458;
+      margin-top: 7px;
     }
   }
 }
@@ -520,13 +523,21 @@ a:link , a:visited , a:hover , a:active {
   position: relative;
   z-index: -5;
   width: 100%;
-  background-color: $bgColor;
+  background-color: rgba($color: $bgColor, $alpha: .75);
   
   &-bg {
     background: url(../img/main-visual-md.png);
     background-repeat: no-repeat;
     background-position: top right -110px;
-    background-size: contain;
+    background-size: auto 768px;
+
+    /* ワイドサイズのみメディアクエリはmin-widthで記述 */
+    @include mq(xl){
+      background: url(../img/main-visual-lg.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: auto 768px;
+    }
     
     @include mq(){
       background-image: url(../img/main-visual-md.png);
@@ -546,7 +557,11 @@ a:link , a:visited , a:hover , a:active {
 
     &__inner {
       background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,.7) 55%, rgba(255,255,255,.1) 70%,transparent 100%);
-      
+
+      @include mq(xl){
+        background:none
+      }
+
       @include mq(){
         width: 100%;
         height: 480px;
@@ -630,7 +645,7 @@ a:link , a:visited , a:hover , a:active {
   }
 
   @include mq(sm){
-    padding-top: 32px;
+    padding-top: 35px;
   }
 
   &-inner {
@@ -642,6 +657,10 @@ a:link , a:visited , a:hover , a:active {
       position: static;
       width: 100%;
       padding: 0 9.375%;
+    }
+
+    @include mq(sm){
+      padding: 0 10%;
     }
   }
 
@@ -669,6 +688,10 @@ a:link , a:visited , a:hover , a:active {
       margin-top: 15px;
     }
 
+    @include mq(sm){
+      margin-top: 14px;
+    }
+
     + .information__item {
       margin-top: 9px;
 
@@ -677,7 +700,7 @@ a:link , a:visited , a:hover , a:active {
       }
 
       @include mq(sm){
-        margin-top: 16px;
+        margin-top: 10px;
       }
     }
 
@@ -711,8 +734,8 @@ a:link , a:visited , a:hover , a:active {
     margin-top: -2px;
 
     @include mq(sm){
-      letter-spacing: 1.5;
-      margin-top: 4px;
+      line-height: 1.5;
+      margin-top: 2px;
     }
   }
 }
@@ -733,7 +756,7 @@ a:link , a:visited , a:hover , a:active {
   }
 
   @include mq(sm){
-    padding: 80px 0;
+    padding: 77px 0 80px;
   }
 }
 
@@ -751,7 +774,8 @@ a:link , a:visited , a:hover , a:active {
   }
 
   @include mq(sm){
-    width: 80.53%;
+    width: 81%;
+    margin: 53px auto 0;
   }
 
   + .concept-media{
@@ -759,6 +783,10 @@ a:link , a:visited , a:hover , a:active {
 
     @include mq(){
       margin-top: 40px;
+    }
+
+    @include mq(){
+      margin-top: 36px;
     }
   }
 
@@ -777,6 +805,8 @@ a:link , a:visited , a:hover , a:active {
 
     @include mq(sm){
       height: 240px;
+      margin-top: 36px;
+      background-position: center;
     }
 
     &--growth {
@@ -784,6 +814,10 @@ a:link , a:visited , a:hover , a:active {
 
       @include mq(){
         background-image: url(../img/concept01-md.png);
+      }
+
+      @include mq(){
+        background-image: url(../img/concept01.png);
       }
     }
 
@@ -794,17 +828,11 @@ a:link , a:visited , a:hover , a:active {
       @include mq(){
         background-image: url(../img/concept02-md.png);
       }
-    }
-  }
 
-  &__img {
-
-
-    object-fit: cover;
-    object-position: center left;
-
-    @include mq(){
-      object-position: 50% 50%;
+      @include mq(){
+        background-image: url(../img/concept02.png);
+        background-position: center;
+      }
     }
   }
 
@@ -824,10 +852,14 @@ a:link , a:visited , a:hover , a:active {
       width: 100%;
       min-height: auto;
       height: 360px;
-      padding: 56px 32px;
+      padding: 10% 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
 
     @include mq(sm){
+      display: block;
       padding: 0;
       height: auto;
       background-color: transparent;
@@ -870,6 +902,8 @@ a:link , a:visited , a:hover , a:active {
 
     @include mq(sm){
       font-size: unquote('min(1.4rem,4vw)');
+      margin-top: 23px;
+
     }
   }
 }
@@ -881,6 +915,10 @@ a:link , a:visited , a:hover , a:active {
     flex-direction: column-reverse;
     width: 81.25%;
     margin: 0 auto;
+  }
+
+  @include mq(sm){
+    width: 81%;
   }
 
   .concept-media{
@@ -956,7 +994,7 @@ a:link , a:visited , a:hover , a:active {
 
 
   @include mq(sm){
-    padding: 24px 0;
+    padding: 19px 0;
   }
   
   &__text {
@@ -974,7 +1012,9 @@ a:link , a:visited , a:hover , a:active {
 
     @include mq(sm){
       font-size: unquote('min(1.4rem,3.5vw)');
-      margin-top: 24px;
+      margin-top: 30px;
+      letter-spacing: 0.27em;
+      padding: 0;
     }
   }
 }
@@ -1034,7 +1074,8 @@ a:link , a:visited , a:hover , a:active {
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
 
   @include mq(sm){
-    margin: 32px auto 0;
+    padding: 7px 60px 8px 13px;
+    margin: 31px auto 0;
   }
 
   &::before {
@@ -1048,6 +1089,10 @@ a:link , a:visited , a:hover , a:active {
     border-left: 16px solid #34675C;
     border-top: 6px solid transparent;
     transition: right .3s ease;
+
+    @include mq(sm){
+      right: 19px;
+    }
   }
 
   &::after {
@@ -1065,6 +1110,10 @@ a:link , a:visited , a:hover , a:active {
     &::before{
       right: 9px;
       transition: right .3s ease;
+
+      @include mq(sm){
+        right: 13px;
+      }
     }
     &::after {
       margin-left: 14px;
@@ -1086,6 +1135,10 @@ a:link , a:visited , a:hover , a:active {
   @include mq(){
     padding: 82px 0 80px;
     margin: 0 auto;
+  }
+
+  @include mq(sm){
+    padding: 79px 0;
   }
 
 }
@@ -1228,7 +1281,7 @@ a:link , a:visited , a:hover , a:active {
   }
 
   @include mq(sm){
-    margin-top: 32px;
+    margin-top: 31px;
   }
 
   &::before {
@@ -1253,6 +1306,7 @@ a:link , a:visited , a:hover , a:active {
     background-color: #34675C;
     margin-left: 8px;
     transition: margin-left .3s;
+
   }
 
   &:hover {
@@ -1299,7 +1353,7 @@ a:link , a:visited , a:hover , a:active {
   @include mq(sm){
     width: 80.53%;
     display: block;
-
+    padding: 24px 0 35px;
   }
 }
 
@@ -1404,6 +1458,7 @@ a:link , a:visited , a:hover , a:active {
 .footer-contact-btn {
   display: inline-block;
   width: 130px;
+  min-width: 125px;
   height: 40px;
   color: #fff;
   font-size: 1.6rem;

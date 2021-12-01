@@ -88,6 +88,7 @@ a:link, a:visited, a:hover, a:active {
   .section-title__jp {
     font-size: 2.4rem;
     line-height: 1.458;
+    margin-top: 7px;
   }
 }
 
@@ -557,13 +558,22 @@ a:link, a:visited, a:hover, a:active {
   position: relative;
   z-index: -5;
   width: 100%;
-  background-color: #fafafa;
+  background-color: rgba(250, 250, 250, 0.75);
 }
 .main-visual-bg {
   background: url(../img/main-visual-md.png);
   background-repeat: no-repeat;
   background-position: top right -110px;
-  background-size: contain;
+  background-size: auto 768px;
+  /* ワイドサイズのみメディアクエリはmin-widthで記述 */
+}
+@media screen and (min-width: 1500px) {
+  .main-visual-bg {
+    background: url(../img/main-visual-lg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 768px;
+  }
 }
 @media screen and (max-width: 768px) {
   .main-visual-bg {
@@ -586,6 +596,11 @@ a:link, a:visited, a:hover, a:active {
 .main-visual-bg__inner {
   background: -webkit-gradient(linear, left top, right top, from(white), color-stop(30%, white), color-stop(55%, rgba(255, 255, 255, 0.7)), color-stop(70%, rgba(255, 255, 255, 0.1)), to(transparent));
   background: linear-gradient(90deg, white 0%, white 30%, rgba(255, 255, 255, 0.7) 55%, rgba(255, 255, 255, 0.1) 70%, transparent 100%);
+}
+@media screen and (min-width: 1500px) {
+  .main-visual-bg__inner {
+    background: none;
+  }
 }
 @media screen and (max-width: 768px) {
   .main-visual-bg__inner {
@@ -675,7 +690,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .information {
-    padding-top: 32px;
+    padding-top: 35px;
   }
 }
 .information-inner {
@@ -688,6 +703,11 @@ a:link, a:visited, a:hover, a:active {
     position: static;
     width: 100%;
     padding: 0 9.375%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .information-inner {
+    padding: 0 10%;
   }
 }
 .information__title {
@@ -717,6 +737,11 @@ a:link, a:visited, a:hover, a:active {
     margin-top: 15px;
   }
 }
+@media screen and (max-width: 375px) {
+  .information__item {
+    margin-top: 14px;
+  }
+}
 .information__item + .information__item {
   margin-top: 9px;
 }
@@ -727,7 +752,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .information__item + .information__item {
-    margin-top: 16px;
+    margin-top: 10px;
   }
 }
 @media screen and (max-width: 375px) {
@@ -761,8 +786,8 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .information__text {
-    letter-spacing: 1.5;
-    margin-top: 4px;
+    line-height: 1.5;
+    margin-top: 2px;
   }
 }
 
@@ -783,7 +808,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .concept {
-    padding: 80px 0;
+    padding: 77px 0 80px;
   }
 }
 
@@ -810,7 +835,8 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .concept-media {
-    width: 80.53%;
+    width: 81%;
+    margin: 53px auto 0;
   }
 }
 .concept-media + .concept-media {
@@ -819,6 +845,11 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .concept-media + .concept-media {
     margin-top: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .concept-media + .concept-media {
+    margin-top: 36px;
   }
 }
 .concept-media__image {
@@ -838,6 +869,8 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 375px) {
   .concept-media__image {
     height: 240px;
+    margin-top: 36px;
+    background-position: center;
   }
 }
 .concept-media__image--growth {
@@ -846,6 +879,11 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 768px) {
   .concept-media__image--growth {
     background-image: url(../img/concept01-md.png);
+  }
+}
+@media screen and (max-width: 768px) {
+  .concept-media__image--growth {
+    background-image: url(../img/concept01.png);
   }
 }
 .concept-media__image--logo-and-color {
@@ -857,16 +895,10 @@ a:link, a:visited, a:hover, a:active {
     background-image: url(../img/concept02-md.png);
   }
 }
-.concept-media__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center left;
-     object-position: center left;
-}
 @media screen and (max-width: 768px) {
-  .concept-media__img {
-    -o-object-position: 50% 50%;
-       object-position: 50% 50%;
+  .concept-media__image--logo-and-color {
+    background-image: url(../img/concept02.png);
+    background-position: center;
   }
 }
 .concept-media__body {
@@ -887,11 +919,22 @@ a:link, a:visited, a:hover, a:active {
     width: 100%;
     min-height: auto;
     height: 360px;
-    padding: 56px 32px;
+    padding: 10% 32px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
 }
 @media screen and (max-width: 375px) {
   .concept-media__body {
+    display: block;
     padding: 0;
     height: auto;
     background-color: transparent;
@@ -937,6 +980,7 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 375px) {
   .concept-media__text {
     font-size: min(1.4rem,4vw);
+    margin-top: 23px;
   }
 }
 
@@ -954,6 +998,11 @@ a:link, a:visited, a:hover, a:active {
             flex-direction: column-reverse;
     width: 81.25%;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .concept-media--reverse {
+    width: 81%;
   }
 }
 .concept-media--reverse .concept-media__img {
@@ -1038,7 +1087,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .overview-box {
-    padding: 24px 0;
+    padding: 19px 0;
   }
 }
 .overview-box__text {
@@ -1058,7 +1107,9 @@ a:link, a:visited, a:hover, a:active {
 @media screen and (max-width: 375px) {
   .overview-box__text {
     font-size: min(1.4rem,3.5vw);
-    margin-top: 24px;
+    margin-top: 30px;
+    letter-spacing: 0.27em;
+    padding: 0;
   }
 }
 
@@ -1120,7 +1171,8 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .overview-box__btn {
-    margin: 32px auto 0;
+    padding: 7px 60px 8px 13px;
+    margin: 31px auto 0;
   }
 }
 .overview-box__btn::before {
@@ -1135,6 +1187,11 @@ a:link, a:visited, a:hover, a:active {
   border-top: 6px solid transparent;
   -webkit-transition: right 0.3s ease;
   transition: right 0.3s ease;
+}
+@media screen and (max-width: 375px) {
+  .overview-box__btn::before {
+    right: 19px;
+  }
 }
 .overview-box__btn::after {
   position: absolute;
@@ -1151,6 +1208,11 @@ a:link, a:visited, a:hover, a:active {
   right: 9px;
   -webkit-transition: right 0.3s ease;
   transition: right 0.3s ease;
+}
+@media screen and (max-width: 375px) {
+  .overview-box__btn:hover::before {
+    right: 13px;
+  }
 }
 .overview-box__btn:hover::after {
   margin-left: 14px;
@@ -1170,6 +1232,11 @@ a:link, a:visited, a:hover, a:active {
   .blog {
     padding: 82px 0 80px;
     margin: 0 auto;
+  }
+}
+@media screen and (max-width: 375px) {
+  .blog {
+    padding: 79px 0;
   }
 }
 
@@ -1324,7 +1391,7 @@ a:link, a:visited, a:hover, a:active {
 }
 @media screen and (max-width: 375px) {
   .blog-btn {
-    margin-top: 32px;
+    margin-top: 31px;
   }
 }
 .blog-btn::before {
@@ -1403,6 +1470,7 @@ a:link, a:visited, a:hover, a:active {
   .footer-inner {
     width: 80.53%;
     display: block;
+    padding: 24px 0 35px;
   }
 }
 
@@ -1523,6 +1591,7 @@ a:link, a:visited, a:hover, a:active {
 .footer-contact-btn {
   display: inline-block;
   width: 130px;
+  min-width: 125px;
   height: 40px;
   color: #fff;
   font-size: 1.6rem;
