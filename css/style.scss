@@ -1,5 +1,4 @@
-@charset "UTF-8";
-
+@charset 'UTF-8';
 $mainColor: #b3c100;
 $subColor: #34675c;
 $bgColor: #fafafa;
@@ -12,7 +11,6 @@ $breakpoint-sm: 375px !default;
 $breakpoint-md: 768px !default;
 $breakpoint-lg: 1300px !default;
 $breakpoint-xl: 1500px !default;
-
 $breakpoints: (
   'sm': 'screen and (max-width: 375px)',
   'md': 'screen and (max-width: 768px)',
@@ -32,10 +30,10 @@ html {
 
 body {
   color: $textColor;
-  font-size: 1.6rem;
-  font-family: Noto Sans JP, “游ゴシック”, “Yu Gothic”, “YuGothic”,”Meiryo”, 
-  “Hiragino Sans”, “ヒラギノ角ゴシック”, “Hiragino Kaku Gothic ProN”, “ヒラギノ角ゴ ProN”, 
+  font-family: Noto Sans JP, “游ゴシック”, “Yu Gothic”, “YuGothic”,”Meiryo”,
+  “Hiragino Sans”, “ヒラギノ角ゴシック”, “Hiragino Kaku Gothic ProN”, “ヒラギノ角ゴ ProN”,
   “MS Gothic”, “Osaka”, sans-serif;
+  font-size: 1.6rem;
 }
 
 body > * {
@@ -51,7 +49,7 @@ li {
   list-style: none;
 }
 
-a:link , a:visited , a:hover , a:active {
+a:link, a:visited, a:hover, a:active {
   color: $subColor;
   text-decoration: none;
 }
@@ -61,22 +59,20 @@ a:link , a:visited , a:hover , a:active {
 /*----------------*/
 
 .wrapper {
-  width: 87.5%;
-  max-width: 1138px;
-  min-height: 768px;
-  margin: 0 auto;
-
-  @include mq(){
-    width: 100%;
+  @include mq() {
+    margin: 0;
     max-width: none;
     min-height: auto;
     padding: 0 9.375%;
-    margin: 0;
+    width: 100%;
   }
-
-  @include mq(sm){
+  @include mq(sm) {
     padding: 0 8.2%;
   }
+  margin: 0 auto;
+  max-width: 1138px;
+  min-height: 768px;
+  width: 87.5%;
 }
 
 /*----------------*/
@@ -87,41 +83,37 @@ a:link , a:visited , a:hover , a:active {
   text-align: center;
 
   &__en {
-    font-family: Oswald;
-    font-weight: 500;
-    font-size: 1.8rem;
     color: $mainColor;
-    line-height: 1.444;
-    letter-spacing: 0.1em;
-
-    @include mq(sm){
+    font-family: Oswald;
+    font-size: 1.8rem;
+    font-weight: 500;
+    @include mq(sm) {
       font-size: 1.4rem;
       line-height: 1.5;
     }
+    letter-spacing: .1em;
+    line-height: 1.444;
   }
 
   &__jp {
-    font-size: 5.6rem;
     color: $textColor;
-    letter-spacing: 0.1em;
-    margin-top: 16px;
-
-    @include mq(){
+    font-size: 5.6rem;
+    @include mq() {
       font-size: 4rem;
       margin-top: 8px;
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: 2.4rem;
       line-height: 1.458;
       margin-top: 7px;
     }
+    letter-spacing: .1em;
+    margin-top: 16px;
   }
 }
 
 .md-br {
   display: none;
-
   @include mq() {
     display: inline-block;
   }
@@ -133,13 +125,13 @@ a:link , a:visited , a:hover , a:active {
   }
 
   &--absolute::before {
-    position: absolute;
-    content: '';
-    right: 0;
-    left: 0;
-    top: 0;
     bottom: 0;
+    content: '';
+    left: 0;
     pointer-events: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
     z-index: 1;
   }
 }
@@ -148,146 +140,136 @@ a:link , a:visited , a:hover , a:active {
 /* header         */
 /*----------------*/
 .header-menu-bar {
-  position: fixed;
-  top: 16px;
-  right: 0;
-  left: 0;
-  z-index: 100;
-  width: 95%;
-  max-width: 1300px;
-  height: 80px;
-  background-color: #fff;
-  margin: 0 auto;
-  padding: 0 16px;
+  background-color: #ffffff;
   border-radius: 40px;
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
-
-  @include mq(){
+  height: 80px;
+  @include mq() {
     height: 56px;
   }
-
   @include mq(sm) {
     top: 8px;
   }
+  left: 0;
+  margin: 0 auto;
+  max-width: 1300px;
+  padding: 0 16px;
+  position: fixed;
+  right: 0;
+  top: 16px;
+  width: 95%;
+  z-index: 100;
 }
 
 .header-menu-bar__inner {
-  position: relative;
-  max-width: 1140px;
-  height: 100%;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin: 0 auto;
-
-  @include mq(){
+  display: flex;
+  height: 100%;
+  @include mq() {
     position: relative;
     z-index: 1;
   }
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1140px;
+  position: relative;
 }
 
 .site-logo {
   background-image: url(../img/logo@2x.png);
   background-position: center;
   background-size: contain;
-  width: 253px;
-  min-width: 180px;
   height: 80px;
-  margin-right: 12px;
-
-  @include mq(){
+  @include mq() {
     background-image: url(../img/logo-md@2x.png);
-    width: 201px;
     height: 32px;
     margin-right: 0;
+    width: 201px;
   }
+  margin-right: 12px;
+  min-width: 180px;
+  width: 253px;
 
   &__link {
     display: block;
-    width: 100%;
     height: 100%;
+    width: 100%;
   }
 }
 
 .nav-menu {
-  width: 670px;
-  min-width: 57%;
-  height: 100%;
-  font-size: unquote('min(1.6rem,1.7vw)');
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-
-  @include mq(){
-    visibility: hidden;
+  display: flex;
+  font-size: unquote('min(1.6rem,1.7vw)');
+  height: 100%;
+  @include mq() {
     flex-direction: column;
+    height: auto;
+    @include mq(sm) {
+      top: 125px;
+    }
     justify-content: flex-start;
     position: absolute;
-    top: 176px;
     right: calc(-32px - 80%);
-    width: 80%;
-    height: auto;
+    top: 15.5vh;
     transition: right .5s;
+    visibility: hidden;
+    width: 80%;
 
-    &[aria-hidden="false"] {
+    &[aria-hidden='false'] {
       right: 0;
       transition: right .5s;
     }
-
-    @include mq(sm){
-      top: 125px;
-    }
   }
+  justify-content: space-between;
+  min-width: 57%;
+  width: 670px;
 
   &-list {
-    width: 77%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
     align-items: center;
-    margin-right: 8px;
-
-    @include mq(){
+    display: flex;
+    height: 100%;
+    @include mq() {
+      flex-direction: column;
+      height: auto;
+      margin: 0 auto;
       max-width: 285px;
       min-width: 49.3%;
-      flex-direction: column;
-      margin: 0 auto;
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       max-width: 62%;
       width: 171px;
     }
-    
+    justify-content: space-between;
+    margin-right: 8px;
+    width: 77%;
+
     &__item {
       display: flex;
-      justify-content: center;
-      min-width: 60px;
       height: 100%;
-      padding: 0 unquote('min(16px,2vw)');
-      letter-spacing: 0.02em;
-
-      @include mq(){
-        position: relative;
-        width: 100%;
-        justify-content: flex-start;
+      @include mq() {
         align-items: center;
-        padding: 0;
         height: 46px;
-        margin-top: 0;
-
-        @include mq(sm){
+        @include mq(sm) {
           height: 26px;
         }
+        justify-content: flex-start;
+        margin-top: 0;
+        padding: 0;
+        position: relative;
+        width: 100%;
 
         + .nav-menu-list__item {
-          margin-top: 41px;
-
-          @include mq(sm){
+          @include mq(sm) {
             margin-top: 25px;
           }
+          margin-top: 41px;
         }
       }
+      justify-content: center;
+      letter-spacing: .02em;
+      min-width: 60px;
+      padding: 0 unquote('min(16px,2vw)');
 
       &:hover {
         @include mq() {
@@ -299,26 +281,24 @@ a:link , a:visited , a:hover , a:active {
 
       &::after {
         display: none;
-
-        @include mq(){
-          position: absolute;
-          right: 0;
-          display: inline-block;
+        @include mq() {
+          color: $grayColor;
           content: '';
-          width: unquote('min(80px,20vw)');
-          height: auto;
-          text-align: left;
+          display: inline-block;
           font-family: Oswald;
           font-size: unquote('min(2.4rem,5.3vw)');
-          color: $grayColor;
-          line-height: 1.5;
-          letter-spacing: 0.1em;
-        }
-
-        @include mq(sm){
-          width: unquote('min(58px,11.7vw)');
           height: auto;
+          letter-spacing: .1em;
+          line-height: 1.5;
+          position: absolute;
+          right: 0;
+          text-align: left;
+          width: unquote('min(80px,20vw)');
+        }
+        @include mq(sm) {
           font-size: unquote('min(1.4rem,3.1vw)');
+          height: auto;
+          width: unquote('min(58px,11.7vw)');
         }
       }
     }
@@ -343,108 +323,104 @@ a:link , a:visited , a:hover , a:active {
 
 
     &__link {
-      position: relative;
       display: block;
-      padding: 28px 0;
-      white-space: nowrap;
-      min-width: calc(100% + 32px);
       height: 100%;
-      text-align: center;
-
-      @include mq(){
-        padding: 0;
-        font-size: unquote('min(3.2rem,7vw)');
+      @include mq() {
         color: $subColor;
+        font-size: unquote('min(3.2rem,7vw)');
         font-weight: bold;
-        letter-spacing: 0.02em;
+        letter-spacing: .02em;
+        padding: 0;
         text-align: left;
       }
-
-      @include mq(sm){
+      @include mq(sm) {
         font-size: unquote('min(1.8rem,5vw)');
         font-weight: 400;
+        height: 26px;
       }
+      min-width: calc(100% + 32px);
+      padding: 28px 0;
+      position: relative;
+      text-align: center;
+      white-space: nowrap;
 
       &::after {
-        position: absolute;
-        content: '';
-        bottom: 0.5px;
-        right: 0;
-        left: 0;
-        width: 0;
-        height: 1px;
         background-color: $subColor;
-        transition: width .5s ease;
-
-        @include mq(){
+        bottom: 0;
+        content: '';
+        height: 1px;
+        @include mq() {
           display: none;
         }
+        left: 0;
+        position: absolute;
+        right: 0;
+        transition: width .5s ease;
+        width: 0;
       }
 
       &:hover::after {
-        width: 100%;
         transition: width .5s ease;
+        width: 100%;
       }
     }
   }
 }
 
 .nav-menu-bg {
-  visibility: hidden;
+  background-color: rgba(52,103,92,.5);
   display: block;
-  position: fixed;
-  top: 0;
-  right: 0;
-  z-index: 5;
-  width: 0;
   height: 100%;
-  background-color:rgba(52,103,92,.5);
+  position: fixed;
+  right: 0;
+  top: 0;
   transition: .5s;
+  visibility: hidden;
+  width: 0;
+  z-index: 5;
 
-  &[aria-hidden="false"] {
-    width: 100%;
+  &[aria-hidden='false'] {
     transition: width .5s;
+    width: 100%;
   }
 
   &__inner {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 80%;
-    height: 100%;
     background-color: $bgColor;
     box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
+    height: 100%;
+    min-width: 80%;
+    position: absolute;
+    right: 0;
+    top: 0;
   }
 }
 
 .burger-btn {
   display: none;
-
-  @include mq(){ 
-    position: absolute;
-    top: 50%;
-    right: 9px;
-    transform: translateY(-50%);
-    z-index: 2;
-    display: block; 
-    width: 32px;
-    height: 22px;
+  @include mq() {
     background-color: transparent;
+    display: block;
+    height: 22px;
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    z-index: 2;
   }
 }
 
 .bar {
-  position: relative;
-  display: block;
-  width: 32px;
-  height: 2px;
   background-color: $subColor;
   border-radius: 2px;
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 32px;
 
-  &--top,
-  &--btm {
-    position: absolute;
+  &--top, &--btm {
     display: block;
+    position: absolute;
   }
 
   &--top {
@@ -462,53 +438,51 @@ a:link , a:visited , a:hover , a:active {
   }
 }
 
-.burger-btn[aria-expanded="true"] {
-  @include mq(){
-    width: 24px;
+.burger-btn[aria-expanded='true'] {
+  @include mq() {
     height: 24px;
+    width: 24px;
   }
 }
 
-.burger-btn[aria-expanded="true"] .bar--top {
+.burger-btn[aria-expanded='true'] .bar--top {
   transform: rotate(45deg) translate(4px,11px);
   transition: transform .5s;
 }
-.burger-btn[aria-expanded="true"] .bar--mid {
-  transform: rotate(45deg) translate(-4px,4px);
+.burger-btn[aria-expanded='true'] .bar--mid {
   opacity: 0;
+  transform: rotate(45deg) translate(-4px,4px);
   transition: transform opacity .5s;
 }
-.burger-btn[aria-expanded="true"] .bar--btm {
+.burger-btn[aria-expanded='true'] .bar--btm {
   transform: rotate(-45deg) translate(4px,-11px);
   transition: transform .5s;
 }
 
 
 .contact-btn {
-  display: inline-block;
-  width: 130px;
-  height: 40px;
-  color: #fff;
   background-color: $mainColor;
   border-radius: 40px;
-  padding: 8px 16px;
-  white-space: nowrap;
-  transition: background-color .3s;
-
-  @include mq(){
-    width: unquote('min(259px,50vw)');
-    height: unquote('min(79px,15.2vw)');
+  color: #ffffff;
+  display: inline-block;
+  height: 40px;
+  @include mq() {
     font-size: unquote('min(3.2rem,6.5vw)');
-    letter-spacing: 0.02em;
+    height: unquote('min(79px,15.2vw)');
+    letter-spacing: .02em;
     margin-top: 81px;
+    width: unquote('min(259px,50vw)');
   }
-
-  @include mq(sm){
-    width: 130px;
-    height: 40px;
+  @include mq(sm) {
     font-size: 1.6rem;
+    height: 40px;
     margin-top: 65px;
+    width: 130px;
   }
+  padding: 8px 16px;
+  transition: background-color .3s;
+  white-space: nowrap;
+  width: 130px;
 
   &:hover {
     background: rgba($color: $mainColor, $alpha: .7);
@@ -519,224 +493,199 @@ a:link , a:visited , a:hover , a:active {
 /*----------------*/
 /* main-visual    */
 /*----------------*/
-.main-visual{
-  position: relative;
-  z-index: -5;
-  width: 100%;
+.main-visual {
   background-color: rgba($color: $bgColor, $alpha: .75);
-  
+  position: relative;
+  width: 100%;
+  z-index: -5;
+
   &-bg {
     background: url(../img/main-visual-md.png);
-    background-repeat: no-repeat;
     background-position: top right -110px;
+    background-repeat: no-repeat;
     background-size: auto 768px;
-
     /* ワイドサイズのみメディアクエリはmin-widthで記述 */
-    @include mq(xl){
+    @include mq(xl) {
       background: url(../img/main-visual-lg.png);
-      background-repeat: no-repeat;
       background-position: center;
+      background-repeat: no-repeat;
       background-size: auto 768px;
     }
-    
-    @include mq(){
-      background-image: url(../img/main-visual-md.png);
+    @include mq() {
       background-color: $bgColor;
-      background-repeat: no-repeat;
+      background-image: url(../img/main-visual-md.png);
       background-position: top right -110px;
+      background-repeat: no-repeat;
       background-size: auto 480px;
     }
-    
-    @include mq(sm){
-      height: 603px;
+    @include mq(sm) {
       background: url(../img/main-visual-sm.png);
+      background-position: center bottom;
       background-repeat: no-repeat;
       background-size: contain;
-      background-position:  center bottom;
+      height: 603px;
     }
 
     &__inner {
-      background:linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,.7) 55%, rgba(255,255,255,.1) 70%,transparent 100%);
-
-      @include mq(xl){
-        background:none
-      }
-
-      @include mq(){
-        width: 100%;
-        height: 480px;
-      }
-      
-      @include mq(sm){
-        height: 603px;
+      background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,.7) 55%, rgba(255,255,255,.1) 70%,transparent 100%);
+      @include mq(xl) {
         background: none;
+      }
+      @include mq() {
+        height: 480px;
+        width: 100%;
+      }
+      @include mq(sm) {
+        background: none;
+        height: 603px;
       }
     }
   }
-  
 }
 
 .catch-copy {
+  @include mq() {
+    padding-left: 8px;
+    padding-top: 148px;
+    position: static;
+    white-space: nowrap;
+  }
+  @include mq(sm) {
+    padding-left: 0;
+    padding-top: 136px;
+    width: 100%;
+  }
   position: absolute;
   top: 302px;
 
-  @include mq(){
-    position: static;
-    padding-top: 148px;
-    padding-left: 8px;
-    white-space: nowrap;
-  }
-
-  @include mq(sm) {
-    width: 100%;
-    padding-top: 136px;
-    padding-left: 0;
-  }
-  
   &__jp {
-    font-size: 2.4rem;
     color: $subColor;
+    font-size: 2.4rem;
     font-weight: bold;
-    line-height: 1.458;
-    letter-spacing: 0.2em;
-
-    @include mq(){
+    @include mq() {
       font-size: clamp(2rem,2.4rem,3.2vw);
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: unquote('min(2.4rem,7vw)');
       padding-left: 5px;
     }
+    letter-spacing: .2em;
+    line-height: 1.458;
   }
 
   &__en {
-    font-weight: 400;
+    color: $grayColor;
     font-family: Bad Script;
     font-size: 1.4rem;
-    color: $grayColor;
-    line-height: 2;
-    letter-spacing: 0.02em;
-    margin-top: 27px;
-
-    @include mq(){
-      font-size: clamp(0.83rem,1rem,1.3vw);
+    font-weight: 400;
+    @include mq() {
+      font-size: clamp(.83rem,1rem,1.3vw);
       line-height: 1.9;
       margin-top: 26px;
     }
-
-    @include mq(sm){
-      white-space: normal;
-      overflow-wrap: break-word;
+    @include mq(sm) {
       font-size: 1rem;
       margin-top: 20px;
+      overflow-wrap: break-word;
+      white-space: normal;
     }
+    letter-spacing: .02em;
+    line-height: 2;
+    margin-top: 27px;
   }
 }
 
 .information {
-  width: 87.5%;
-  max-width: 1138px;
-  margin: 0 auto;
-
-  @include mq(){
+  @include mq() {
     padding-top: 56px;
     width: 100%;
   }
-
-  @include mq(sm){
+  @include mq(sm) {
     padding-top: 35px;
   }
+  margin: 0 auto;
+  max-width: 1138px;
+  width: 87.5%;
 
   &-inner {
-    position: absolute;
     bottom: 34px;
-    width: 496px;
-  
-    @include mq(){
+    @include mq() {
+      padding: 0 9.375%;
       position: static;
       width: 100%;
-      padding: 0 9.375%;
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       padding: 0 10%;
     }
+    position: absolute;
+    width: 496px;
   }
 
   &__title {
-    font-family: Oswald;
-    font-weight: 500;
-    font-size: 1.8rem;
     color: $mainColor;
-    line-height: 1.444;
-    letter-spacing: 0.1em;
-
-    @include mq(sm){
+    font-family: Oswald;
+    font-size: 1.8rem;
+    font-weight: 500;
+    @include mq(sm) {
       font-size: 1.4rem;
       line-height: 1.5rem;
     }
+    letter-spacing: .1em;
+    line-height: 1.444;
   }
 
   &__item {
     display: flex;
+    @include mq() {
+      margin-top: 15px;
+      min-height: auto;
+    }
+    @include mq(sm) {
+      margin-top: 14px;
+    }
+    @include mq(sm) {
+      display: block;
+    }
     margin-top: 16px;
     min-height: 42px;
 
-    @include mq(){
-      min-height: auto;
-      margin-top: 15px;
-    }
-
-    @include mq(sm){
-      margin-top: 14px;
-    }
-
     + .information__item {
-      margin-top: 9px;
-
-      @include mq(){
+      @include mq() {
         margin-top: 7px;
       }
-
-      @include mq(sm){
+      @include mq(sm) {
         margin-top: 10px;
       }
-    }
-
-    @include mq(sm){
-      display: block;
+      margin-top: 9px;
     }
   }
 
   &__time {
+    color: $grayColor;
     font-family: Oswald;
     font-size: 1.4rem;
-    color: $grayColor;
-    line-height: 1.5;
-    letter-spacing: 0.04em;
-    margin-right: 30px;
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: 1.2rem;
       line-height: 1.416;
       margin-right: 0;
     }
+    letter-spacing: .04em;
+    line-height: 1.5;
+    margin-right: 30px;
   }
 
   &__text {
+    color: $textColor;
     display: inline-block;
     font-size: 1.2rem;
-    color: $textColor;
-    line-height: 2;
-    letter-spacing: 0.02em;
-    overflow-wrap: break-word;
-    margin-top: -2px;
-
-    @include mq(sm){
+    @include mq(sm) {
       line-height: 1.5;
       margin-top: 2px;
     }
+    letter-spacing: .02em;
+    line-height: 2;
+    margin-top: -2px;
+    overflow-wrap: break-word;
   }
 }
 
@@ -745,78 +694,68 @@ a:link , a:visited , a:hover , a:active {
 /*----------------*/
 
 .concept {
-  position: relative;
-  z-index: -5;
-  width: 100%;
-  padding: 160px 0 240px;
   background-color: $bgColor;
-
-  @include mq(){
+  @include mq() {
     padding: 80px 0 120px;
   }
-
-  @include mq(sm){
+  @include mq(sm) {
     padding: 77px 0 80px;
   }
+  padding: 160px 0 240px;
+  position: relative;
+  width: 100%;
+  z-index: -5;
 }
 
 .concept-media {
-  display: flex;
   align-items: center;
-  width: 100%;
-  min-height: 480px;
-  margin-top: 82px;
-
-  @include mq(){
+  display: flex;
+  @include mq() {
     flex-direction: column-reverse;
-    width: 81.25%;
     margin: 56px auto 0;
+    width: 81.25%;
   }
-
-  @include mq(sm){
-    width: 81%;
+  @include mq(sm) {
     margin: 53px auto 0;
+    width: 81%;
   }
+  margin-top: 82px;
+  min-height: 480px;
+  width: 100%;
 
-  + .concept-media{
-    margin-top: 80px;
-
-    @include mq(){
+  + .concept-media {
+    @include mq() {
       margin-top: 40px;
     }
-
-    @include mq(){
+    @include mq() {
       margin-top: 36px;
     }
+    margin-top: 80px;
   }
 
   &__image {
-    width: 640px;
-    height: 480px;
-    min-width: 50%;
-    background-size: cover;
     background-position: center left;
-
-    @include mq(){
-      width: 100%;
+    background-size: cover;
+    height: 480px;
+    @include mq() {
       height: 320px;
       margin-top: 40px;
+      width: 100%;
     }
-
-    @include mq(sm){
+    @include mq(sm) {
+      background-position: center;
       height: 240px;
       margin-top: 36px;
-      background-position: center;
     }
+    min-width: 50%;
+    width: 640px;
 
     &--growth {
       background-image: url(../img/concept01.png);
-
-      @include mq(){
+      @include mq() {
         background-image: url(../img/concept01-md.png);
       }
-
-      @include mq(){
+      @include mq() {
         background-image: url(../img/concept01.png);
       }
     }
@@ -824,12 +763,10 @@ a:link , a:visited , a:hover , a:active {
     &--logo-and-color {
       background-image: url(../img/concept02.png);
       background-position: center right;
-
-      @include mq(){
+      @include mq() {
         background-image: url(../img/concept02-md.png);
       }
-
-      @include mq(){
+      @include mq() {
         background-image: url(../img/concept02.png);
         background-position: center;
       }
@@ -837,107 +774,95 @@ a:link , a:visited , a:hover , a:active {
   }
 
   &__body {
-    width: 640px;
-    min-width: 46.8%;
-    min-height: 360px;
-    background-color: #FEFEFE;
+    background-color: #fefefe;
     border-radius: 16px;
-    padding: 57px 40px 56px;
-    margin-left: -87px;
-    margin-right: 32px;
     box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
-    
-    @include mq(){
-      margin: 0;
-      width: 100%;
-      min-height: auto;
-      height: 360px;
-      padding: 10% 32px;
+    @include mq() {
       display: flex;
       flex-direction: column;
+      height: 360px;
       justify-content: center;
+      margin: 0;
+      min-height: auto;
+      padding: 10% 32px;
+      width: 100%;
     }
-
-    @include mq(sm){
-      display: block;
-      padding: 0;
-      height: auto;
+    @include mq(sm) {
       background-color: transparent;
       box-shadow: none;
+      display: block;
+      height: auto;
+      padding: 0;
     }
+    margin-left: -87px;
+    margin-right: 32px;
+    min-height: 360px;
+    min-width: 46.8%;
+    padding: 57px 40px 56px;
+    width: 640px;
   }
 
   &__title {
+    color: $subColor;
     font-size: unquote('min(3.2rem,3vw)');
     font-weight: bold;
-    color: $subColor;
-    line-height: 1.45;
-    letter-spacing: 0.2em;
-    white-space: nowrap;
-
-    @include mq(){
+    @include mq() {
       font-size: unquote('min(3.2rem,4.3vw)');
       line-height: 1.5;
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: unquote('min(1.8rem,4.8vw)');
       line-height: 2;
       white-space: normal;
     }
+    letter-spacing: .2em;
+    line-height: 1.45;
+    white-space: nowrap;
   }
 
   &__text {
-    font-size: unquote('min(1.6rem,1.8vw)');
-    margin-top: 31px;
     color: $textColor;
-    line-height: 1.95;
-    letter-spacing: 0.04em;
-
-    @include mq(){
-    font-size: unquote('min(1.6rem,3vw)');
-    line-height: 2;
-    margin-top: 28px;
+    font-size: unquote('min(1.6rem,1.8vw)');
+    @include mq() {
+      font-size: unquote('min(1.6rem,3vw)');
+      line-height: 2;
+      margin-top: 28px;
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: unquote('min(1.4rem,4vw)');
       margin-top: 23px;
-
     }
+    letter-spacing: .04em;
+    line-height: 1.95;
+    margin-top: 31px;
   }
 }
 
 .concept-media--reverse {
   flex-direction: row-reverse;
-
-  @include mq(){
+  @include mq() {
     flex-direction: column-reverse;
-    width: 81.25%;
     margin: 0 auto;
+    width: 81.25%;
   }
-
-  @include mq(sm){
+  @include mq(sm) {
     width: 81%;
   }
 
-  .concept-media{
-
+  .concept-media {
     &__img {
-      object-position: center right;
-
-      @include mq(){
+      @include mq() {
         object-position: 50% 50%;
       }
+      object-position: center right;
     }
 
     &__body {
-    margin-left: 32px;
-    margin-right: -87px;
-
-    @include mq(){
-      margin: 0;
-    }
+      @include mq() {
+        margin: 0;
+      }
+      margin-left: 32px;
+      margin-right: -87px;
     }
   }
 }
@@ -947,180 +872,164 @@ a:link , a:visited , a:hover , a:active {
 /* (company,view)        */
 /*-----------------------*/
 .overview {
-  width: 100%;
   display: flex;
-
-  @include mq(){
+  @include mq() {
     flex-direction: column;
     min-height: auto;
   }
+  width: 100%;
 }
 
-.company,
-.view {
-  width: 50%;
-  text-align: center;
-  padding: 16px;
-
-  @include mq(){
-    width: 100%;
+.company, .view {
+  @include mq() {
     height: 388px;
     padding: 15px;
+    width: 100%;
   }
-
-  @include mq(sm){
+  @include mq(sm) {
     height: 228px;
     padding: 8px;
   }
+  padding: 16px;
+  text-align: center;
+  width: 50%;
 }
 
 .company {
   background: url(../img/company-bg.png) no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
 .view {
   background: url(../img/vision-bg.png) no-repeat;
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
 .overview-box {
-  width: 100%;
+  background-color: rgba($color: #ffffff, $alpha: .75);
   height: 100%;
-  background-color: rgba($color: #fff, $alpha: .75);
-  padding: 56px 0;
-
-
-  @include mq(sm){
+  @include mq(sm) {
     padding: 19px 0;
   }
-  
+  padding: 56px 0;
+  width: 100%;
+
   &__text {
+    color: $textColor;
     display: inline-block;
     font-size: unquote('min(1.6rem,1.65vw)');
     font-weight: bold;
-    color: $textColor;
-    letter-spacing: 0.2em;
-    margin-top: 19px;
-    padding: 0 16px;
-
-    @include mq(){
+    @include mq() {
       font-size: unquote('min(1.6rem,3.5vw)');
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: unquote('min(1.4rem,3.5vw)');
+      letter-spacing: .27em;
       margin-top: 30px;
-      letter-spacing: 0.27em;
       padding: 0;
     }
+    letter-spacing: .2em;
+    margin-top: 19px;
+    padding: 0 16px;
   }
 }
 
 .overview-title {
   &__en {
-    font-family: Oswald;
-    font-weight: 500;
-    font-size: unquote('min(1.8rem,1.856vw)');
     color: $mainColor;
-    line-height: 1.444;
-    letter-spacing: 0.1em;
-
-    @include mq(){
+    font-family: Oswald;
+    font-size: unquote('min(1.8rem,1.856vw)');
+    font-weight: 500;
+    @include mq() {
       font-size: unquote('min(1.8rem,3.9vw)');
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: unquote('min(1.2rem,3.4vw)');
       line-height: 1;
     }
+    letter-spacing: .1em;
+    line-height: 1.444;
   }
 
   &__jp {
+    color: $subColor;
     font-size: unquote('min(4rem,4.1vw)');
     font-weight: bold;
-    color: $subColor;
-    line-height: 2.1875;
-    letter-spacing: 0.1em;
-
-    @include mq(){
+    @include mq() {
       font-size: unquote('min(4rem,8.7vw)');
     }
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: 2rem;
-      margin-top: 10px;
       line-height: 1;
+      margin-top: 10px;
     }
+    letter-spacing: .1em;
+    line-height: 2.1875;
   }
 }
 
 .overview-box__btn {
-  position: relative;
-  display: block;
-  width: 149px;
-  max-width: 100%;
-  border: 1px solid #B3C100;
+  background-color: #ffffff;
+  border: 1px solid #b3c100;
   border-radius: 30px;
-  background-color: #fff;
-  font-size: 1.2rem;
-  color: #34675C;
-  padding: 7px 60px 8px 20px;
-  text-align: center;
-  letter-spacing: 0.02em;
-  margin: 56px auto 0;
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
-
-  @include mq(sm){
-    padding: 7px 60px 8px 13px;
+  color: #34675c;
+  display: block;
+  font-size: 1.2rem;
+  @include mq(sm) {
     margin: 31px auto 0;
+    padding: 7px 60px 8px 13px;
   }
+  letter-spacing: .02em;
+  margin: 56px auto 0;
+  max-width: 100%;
+  padding: 7px 60px 8px 20px;
+  position: relative;
+  text-align: center;
+  width: 149px;
 
   &::before {
-    position: absolute;
-    top: 16px;
-    right: 15px;
-    content: '';
-    width: 0;
-    height: 0;
     background-color: transparent;
-    border-left: 16px solid #34675C;
+    border-left: 16px solid #34675c;
     border-top: 6px solid transparent;
-    transition: right .3s ease;
-
-    @include mq(sm){
+    content: '';
+    height: 0;
+    @include mq(sm) {
       right: 19px;
     }
+    position: absolute;
+    right: 15px;
+    top: 16px;
+    transition: right .3s ease;
+    width: 0;
   }
 
   &::after {
-    position: absolute;
+    background-color: #34675c;
     content: '';
-    top: 21px;
-    width: 37px;
     height: 1px;
-    background-color: #34675C;
     margin-left: 8px;
+    position: absolute;
+    top: 21px;
     transition: .3s ease;
+    width: 37px;
   }
 
   &:hover {
-    &::before{
-      right: 9px;
-      transition: right .3s ease;
-
-      @include mq(sm){
+    &::before {
+      @include mq(sm) {
         right: 13px;
       }
+      right: 9px;
+      transition: right .3s ease;
     }
     &::after {
       margin-left: 14px;
       transition: .3s ease;
     }
   }
-
 }
 
 /*----------------*/
@@ -1128,93 +1037,85 @@ a:link , a:visited , a:hover , a:active {
 /*----------------*/
 
 .blog {
-  width: 100%;
   background-color: $bgColor;
-  padding: 120px 60px 160px;
-
-  @include mq(){
-    padding: 82px 0 80px;
+  @include mq() {
     margin: 0 auto;
+    padding: 82px 0 80px;
   }
-
-  @include mq(sm){
+  @include mq(sm) {
     padding: 79px 0;
   }
-
+  padding: 120px 60px 160px;
+  width: 100%;
 }
 
 .article-wrapper {
-  max-width: 944px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  margin: 83px auto -56px;
-
-  @include mq(){
+  @include mq() {
+    margin: 56px auto -48px;
     max-width: none;
     width: 81.25%;
-    margin: 56px auto -48px;
   }
-
-  @include mq(sm){
+  @include mq(sm) {
     margin: 56px auto -32px;
   }
+  justify-content: space-between;
+  margin: 83px auto -56px;
+  max-width: 944px;
 }
 
 .blog-card {
-  width: 432px;
-  max-width: 45.7%;
-  margin-bottom: 53px;
-  min-height: 382px;
-
-  @include mq(){
-    width: 304px;
+  @include mq() {
+    margin-bottom: 48px;
     max-width: 48.7%;
     min-height: 345px;
-    margin-bottom: 48px;
+    width: 304px;
   }
-
-  @include mq(sm){
-    min-width: 100%;
-    min-height: 333px;
+  @include mq(sm) {
     margin-bottom: 32px;
+    min-height: 333px;
+    min-width: 100%;
   }
+  margin-bottom: 53px;
+  max-width: 45.7%;
+  min-height: 382px;
+  width: 432px;
 
   &__link {
     display: block;
-    width: 100%;
     height: 100%;
+    width: 100%;
 
-    &:link , &:visited , &:hover , &:active {
+    &:link, &:visited, &:hover, &:active {
       color: $textColor;
     }
   }
 
   &__image-wrapper {
-    position: relative;
-    width: 100%;
-    padding-top: 53.4%;
-    overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
-  
-    @include mq(){
+    @include mq() {
       padding-top: 52.6%;
     }
+    overflow: hidden;
+    padding-top: 53.4%;
+    position: relative;
+    width: 100%;
   }
 
   &__img {
+    height: 100%;
+    object-fit: cover;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    height: 100%;
-    object-fit: cover;
     transition: transform , height .5s;
   }
 
   &:hover .blog-card__img {
-    transform: scale(1.1) , translateY(0);
     height: 110%;
+    transform: scale(1.1) , translateY(0);
     transition: transform , height .5s;
   }
 
@@ -1223,18 +1124,18 @@ a:link , a:visited , a:hover , a:active {
   }
 
   &__time {
+    color: $grayColor;
     font-family: Oswald;
     font-size: 1.2rem;
-    color: $grayColor;
+    letter-spacing: .04em;
     line-height: 1.416;
-    letter-spacing: 0.04em;
   }
 
   &__category {
-    font-size: 1.2rem;
     color: $mainColor;
+    font-size: 1.2rem;
+    letter-spacing: .02em;
     line-height: 2;
-    letter-spacing: 0.02em;
     margin-left: 12px;
 
     &--seminar {
@@ -1249,68 +1150,64 @@ a:link , a:visited , a:hover , a:active {
   &__text {
     display: block;
     font-weight: bold;
-    line-height: 2;
-    letter-spacing: 0.1em;
-    margin-top: 7px;
-
-    @include mq(sm){
+    @include mq(sm) {
       font-size: 1.4rem;
     }
+    letter-spacing: .1em;
+    line-height: 2;
+    margin-top: 7px;
   }
 }
 
 .blog-btn {
-  position: relative;
-  display: block;
-  width: 240px;
-  max-width: 100%;
-  border: 2px solid #B3C100;
+  background-color: #ffffff;
+  border: 2px solid #b3c100;
   border-radius: 30px;
-  background-color: #fff;
-  font-size: 18px;
-  color: #34675C;
-  padding: 10px 46px 11px 0;
-  text-align: center;
-  line-height: 1.94444;
-  letter-spacing: 0.02em;
-  margin: 59px auto 0;
   box-shadow: 0 10px 15px rgba($color: $textColor, $alpha: .1);
-
-  @include mq(){
+  color: #34675c;
+  display: block;
+  font-size: 18px;
+  @include mq() {
     margin-top: 48px;
   }
-
-  @include mq(sm){
+  @include mq(sm) {
     margin-top: 31px;
   }
+  letter-spacing: .02em;
+  line-height: 1.94444;
+  margin: 59px auto 0;
+  max-width: 100%;
+  padding: 10px 46px 11px 0;
+  position: relative;
+  text-align: center;
+  width: 240px;
 
   &::before {
-    position: absolute;
-    top: 28px;
-    right: 48px;
-    content: '';
-    width: 0;
-    height: 0;
     background-color: transparent;
-    border-left: 16px solid #34675C;
+    border-left: 16px solid #34675c;
     border-top: 6px solid transparent;
+    content: '';
+    height: 0;
+    position: absolute;
+    right: 48px;
+    top: 28px;
     transition: right .3s;
+    width: 0;
   }
 
   &::after {
-    position: absolute;
-    content: '';
+    background-color: #34675c;
     bottom: 22px;
-    width: 34px;
+    content: '';
     height: 1px;
-    background-color: #34675C;
     margin-left: 8px;
+    position: absolute;
     transition: margin-left .3s;
-
+    width: 34px;
   }
 
   &:hover {
-    &::before{
+    &::before {
       right: 42px;
       transition: right .3s;
     }
@@ -1321,164 +1218,151 @@ a:link , a:visited , a:hover , a:active {
   }
 }
 
+_::-webkit-full-page-media, _:future, :root .blog-btn::after {
+  bottom: 21px;
+}
+
 /*----------------*/
 /* footer         */
 /*----------------*/
 .footer {
-  width: 100%;
   background-color: $bgColor;
-  padding: 0 32px;
-
-  @include mq(){
+  @include mq() {
     padding: 0;
   }
+  padding: 0 32px;
+  width: 100%;
 }
 
 .footer-inner {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  border-top: 1px solid $grayColor;
+  display: flex;
+  @include mq() {
+    max-width: none;
+    padding: 0;
+    width: 81%;
+  }
+  @include mq(sm) {
+    display: block;
+    padding: 0 0 35px;
+    width: 80.53%;
+  }
+  justify-content: space-between;
+  margin: 0 auto;
   max-width: 1125px;
   min-height: 47px;
-  border-top: 1px solid $grayColor;
-  margin: 0 auto;
   padding: 10px 0 21px;
-
-  @include mq(){
-    max-width: none;
-    width: 81.25%;
-    padding: 24px 0 19px;
-  }
-
-  @include mq(sm){
-    width: 80.53%;
-    display: block;
-    padding: 24px 0 35px;
-  }
 }
 
 .footer {
-
-  .footer-logo{
-    width: 253px;
-    min-width: 180px;
-    height: 80px;
+  .footer-logo {
     background-image: url(../img/footer-logo@2x.png);
     background-position: center;
     background-size: contain;
-    width: 229px;
     height: 47px;
-
-    @include mq(){
-      min-width: 229px;
-    }
-
-    @include mq(sm){
+    height: 80px;
+    @include mq(sm) {
       margin: 0 auto;
     }
+    min-width: 160px;
+    width: 229px;
   }
 
   .footer-nav-menu {
-    width: 668px;
-    min-width: 57%;
-    height: 60px;
     font-size: unquote('min(1.6rem,1.7vw)');
-
-    @include mq(){
-      min-width: auto;
+    height: 60px;
+    @include mq() {
       height: 47px;
-    }
-
-    @include mq(sm){
-      width: 100%;
       min-width: auto;
+    }
+    @include mq(sm) {
       height: 40px;
       margin-top: 25px;
-    }
-  
-  
-    &-inner {
+      min-width: auto;
       width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    }
+    min-width: 57%;
+    width: 668px;
 
-      @include mq(){
+
+    &-inner {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      @include mq() {
         justify-content: flex-end;
       }
-
-      @include mq(sm){
+      @include mq(sm) {
         display: block;
         text-align: center;
       }
-    }
-  
-    &-list {
-      width: 77%;
-      height: 100%;
-      display: flex;
       justify-content: space-between;
-      align-items: center;
+      width: 100%;
+    }
 
-      @include mq(){
+    &-list {
+      align-items: center;
+      display: flex;
+      height: 100%;
+      @include mq() {
         display: none;
       }
-      
+      justify-content: space-between;
+      width: 77%;
+
       &__item {
         display: flex;
+        height: 100%;
         justify-content: center;
+        letter-spacing: .02em;
         min-width: 40px;
-        height: 100%;
         padding: 0 unquote('min(16px,2vw)');
-        letter-spacing: 0.02em;
       }
-    
+
       &__link {
-        position: relative;
         display: block;
-        padding: 18px 0;
-        white-space: nowrap;
-        min-width: calc(100% + 32px);
         height: 100%;
-        text-align: center;
+        min-width: calc(100% + 32px);
         opacity: 1;
+        padding: 18px 0;
+        position: relative;
+        text-align: center;
         transition: opacity .3s;
-    
-          &:hover {
-            opacity: .7;
-            transition: opacity .4s;
-          }
+        white-space: nowrap;
+
+        &:hover {
+          opacity: .7;
+          transition: opacity .4s;
         }
       }
-      }
     }
+  }
+}
 
 
 .footer-contact-btn {
-  display: inline-block;
-  width: 130px;
-  min-width: 125px;
-  height: 40px;
-  color: #fff;
-  font-size: 1.6rem;
   background-color: $mainColor;
   border-radius: 40px;
-  padding: 8px 16px;
-  white-space: nowrap;
-  transition: background-color .3s;
-
-  @include mq(){
-    width: unquote('min(130px,30vw)');
-    height: unquote('min(40px,4.65vh)');
+  color: #ffffff;
+  display: inline-block;
+  font-size: 1.6rem;
+  height: 40px;
+  @include mq() {
     font-size: unquote('min(1.6rem,3.7vw)');
+    height: unquote('min(40px,4.65vh)');
+    width: unquote('min(130px,30vw)');
   }
-
-  @include mq(sm){
-    width: 130px;
-    height: 40px;
+  @include mq(sm) {
     font-size: 1.6rem;
+    height: 40px;
+    width: 130px;
   }
+  min-width: 125px;
+  padding: 8px 16px;
+  transition: background-color .3s;
+  white-space: nowrap;
+  width: 130px;
 
   &:hover {
     background: rgba($color: $mainColor, $alpha: .7);
@@ -1487,16 +1371,16 @@ a:link , a:visited , a:hover , a:active {
 }
 
 .footer-copy {
-  width: 100%;
   height: 41px;
   text-align: center;
+  width: 100%;
 
   &__text {
+    color: $subColor;
     font-family: Oswald;
     font-size: 1.2rem;
-    color: $subColor;
+    letter-spacing: .04em;
     line-height: 1.416;
-    letter-spacing: 0.04em;
     padding-bottom: 24px;
   }
 }
